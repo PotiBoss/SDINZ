@@ -8,7 +8,7 @@
 
 AEnemyBase::AEnemyBase()
 {
-	Speed = 100.0f; // Adjust the speed as desired
+	Speed = 100.0f; // Adjust the enemy speed as desired
 	CurrentDistance = 0.0f;
 }
 

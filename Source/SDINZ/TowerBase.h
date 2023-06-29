@@ -3,11 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "PaperCharacter.h"
 #include "TowerBase.generated.h"
 
+class ATowerProjectile;
 UCLASS()
-class SDINZ_API ATowerBase : public APawn
+class SDINZ_API ATowerBase : public APaperCharacter
 {
 	GENERATED_BODY()
 
@@ -20,11 +21,11 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TSubclassOf<ATowerProjectile> ProjectileClass;
 	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	UStaticMeshComponent* MeshComponent;
 };
