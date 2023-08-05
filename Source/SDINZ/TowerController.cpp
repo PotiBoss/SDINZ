@@ -44,7 +44,7 @@ void ATowerController::OnStimulusChange(AActor* UpdatedActor, FAIStimulus Stimul
 
 	if(Stimulus.IsActive())
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Enemy in range"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Enemy in range"));
 		if(Enemy)
 		{
 			EnemiesInRange.AddUnique(Enemy);
@@ -52,7 +52,7 @@ void ATowerController::OnStimulusChange(AActor* UpdatedActor, FAIStimulus Stimul
 	}
 	if(!Stimulus.IsActive())
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Not in range"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Not in range"));
 		if(Enemy)
 		{
 			if(CurrentTarget == Enemy)
@@ -66,7 +66,7 @@ void ATowerController::OnStimulusChange(AActor* UpdatedActor, FAIStimulus Stimul
 	}
 	for (auto EnemyArr : EnemiesInRange)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%s"), *EnemyArr->GetName()));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%s"), *EnemyArr->GetName()));
 	}
 
 	if(!bHasTarget)

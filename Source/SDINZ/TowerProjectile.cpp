@@ -39,8 +39,8 @@ void ATowerProjectile::Tick(float DeltaSeconds)
 
 	float CurrentDistance = FVector::Distance(GetActorLocation(), StartingLocation);
 
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%f"), CurrentDistance));
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%f"), TotalDistance));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%f"), CurrentDistance));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%f"), TotalDistance));
 	
 	if(TotalDistance >= CurrentDistance)
 	{
@@ -49,12 +49,12 @@ void ATowerProjectile::Tick(float DeltaSeconds)
 		CurrentLocation += Direction * Speed  * DeltaSeconds;
 
 		SetActorLocation(CurrentLocation);
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Small"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Small"));
 		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%f"), CurrentDistance));
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Bik"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Bik"));
 	}
 }
 
