@@ -3,13 +3,15 @@
 
 #include "Grid.h"
 
+#include "MainPlayerController.h"
+
 // Sets default values
 AGrid::AGrid()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
 
 	ProceduralMeshComponent = CreateDefaultSubobject<UProceduralMeshComponent>("ProceduralMesh");
+
+	ProceduralSelectionMeshComponent = CreateDefaultSubobject<UProceduralMeshComponent>("SelectionProceduralMesh");
 
 }
 
@@ -17,14 +19,8 @@ AGrid::AGrid()
 void AGrid::BeginPlay()
 {
 	Super::BeginPlay();
-	
-}
 
-// Called every frame
-void AGrid::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+	PC = Cast<AMainPlayerController>(GetWorld()->GetFirstPlayerController());
 }
 
 void AGrid::SpawnNewGrid()
@@ -52,24 +48,66 @@ void AGrid::SpawnNewGrid()
 		CreateLine(FVector(0, LineStart, 0), FVector(LineEnd, LineStart, 0), LineThickness, LineVertices, LineTriangles);
 	}
 
-	TArray<FVector> Normals; // Default normals, you can leave them empty
-	TArray<FVector2D> UV0; // Default UVs, you can leave them empty
-	TArray<FLinearColor> VertexColors; // Default vertex colors, you can leave them empty
+	TArray<FVector> Normals;
+	TArray<FVector2D> UV0;
+	TArray<FLinearColor> VertexColors; 
 	TArray<FProcMeshTangent> Tangents;
 	
-	ProceduralMeshComponent->CreateMeshSection_LinearColor(0, LineVertices, LineTriangles, Normals, UV0, VertexColors, Tangents, true);
+	ProceduralMeshComponent->CreateMeshSection_LinearColor(0, LineVertices, LineTriangles, Normals, UV0, VertexColors, Tangents, false);
+	ProceduralMeshComponent->SetMaterial(0, LinesMaterialInstance);
+
+
+	TArray<FVector> SelectionVertices;
+	TArray<int32> SelectionTriangles;
+	
+	CreateLine(FVector(0, TileSize / 2, 0), FVector(TileSize, TileSize / 2, 0), TileSize, SelectionVertices, SelectionTriangles);
+
+	ProceduralSelectionMeshComponent->CreateMeshSection_LinearColor(0, SelectionVertices, SelectionTriangles, Normals, UV0, VertexColors, Tangents, false);
+	ProceduralSelectionMeshComponent->SetMaterial(0, SelectionMaterialInstance);
+
+	ProceduralSelectionMeshComponent->SetVisibility(false);
 }
 
 void AGrid::LocationToTile(FVector Location, bool& bIsValid, int& Row, int& Column)
 {
+	Row = FMath::Floor((Location.X - GetActorLocation().X) / GetGridHeight() * NumRows);
+	Column= FMath::Floor((Location.Y - GetActorLocation().Y) / GetGridWidth() * NumColumns);
+	
+	bIsValid = IsTileValid(Row, Column);
 }
 
-void AGrid::TileToGridLocation(int Row, int Column, int bCenter, bool& bIsValid, FVector2D& GridLocation)
+void AGrid::TileToGridLocation(int Row, int Column, bool bCenter, bool& bIsValid, FVector2D& GridLocation)
 {
+	bIsValid = IsTileValid(Row, Column);
+
+	GridLocation.X = Row * TileSize + GetActorLocation().X;
+	GridLocation.Y = Column * TileSize + GetActorLocation().Y;
+
+	if(bCenter)
+	{
+		GridLocation.X += TileSize / 2;
+		GridLocation.Y += TileSize / 2;
+	}
 }
 
 void AGrid::SetSelectedTile(int Row, int Column)
 {
+	bool bIsValid;
+	FVector2D GridLocation;
+	
+	TileToGridLocation(Row, Column, false, bIsValid, GridLocation);
+
+	if(bIsValid)
+	{
+		ProceduralSelectionMeshComponent->SetVisibility(true);
+		ProceduralSelectionMeshComponent->SetWorldLocation(FVector(GridLocation.X, GridLocation.Y, GetActorLocation().Z));
+	}
+	else
+	{
+		ProceduralSelectionMeshComponent->SetVisibility(false);
+	}
+
+	PC->CurrentTileLocation = ProceduralSelectionMeshComponent->GetComponentLocation();
 }
 
 void AGrid::CreateLine(FVector Start, FVector End, float Thickness, TArray<FVector>& Vertices, TArray<int32>& Triangles)
@@ -124,7 +162,8 @@ UMaterialInstanceDynamic* AGrid::CreateMaterialInstance(FLinearColor Color, floa
 	
 bool AGrid::IsTileValid(int Row, int Column)
 {
-	return true;
+	if(Row >= 0 && Column >= 0 && Row < NumRows && Column < NumColumns) return true;
+	return false;
 }
 
 

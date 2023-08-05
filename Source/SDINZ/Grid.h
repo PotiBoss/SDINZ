@@ -7,6 +7,8 @@
 #include "GameFramework/Actor.h"
 #include "Grid.generated.h"
 
+class AMainPlayerController;
+
 UCLASS()
 class SDINZ_API AGrid : public AActor
 {
@@ -15,18 +17,17 @@ class SDINZ_API AGrid : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AGrid();
-	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION()
 	void LocationToTile(FVector Location,  bool& bIsValid,  int& Row,  int& Column);
 
 	UFUNCTION()
-	void TileToGridLocation(int Row, int Column, int bCenter,  bool& bIsValid,  FVector2D& GridLocation);
+	void TileToGridLocation(int Row, int Column, bool bCenter,  bool& bIsValid,  FVector2D& GridLocation);
 
 	UFUNCTION()
 	void SetSelectedTile(int Row, int Column);
+
+	UProceduralMeshComponent* GetSelectionGridMeshComponent() { return ProceduralSelectionMeshComponent; }
 
 protected:
 	// Called when the game starts or when spawned
@@ -54,7 +55,13 @@ protected:
 	UProceduralMeshComponent* ProceduralMeshComponent;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UProceduralMeshComponent* ProceduralSelectionMeshComponent;
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UMaterialInstance* MaterialBase;
+
+	UPROPERTY()
+	AMainPlayerController* PC;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Constants")
 	int NumRows;
