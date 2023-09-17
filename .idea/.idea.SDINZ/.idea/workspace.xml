@@ -7,25 +7,112 @@
   <component name="ChangeListManager">
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Tiles/BP_Grid.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Tiles/BP_Grid.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/FantasyLevel.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/0X/KC8GT9A7BQ0UT09OHZ8UHE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/0X/KC8GT9A7BQ0UT09OHZ8UHE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/5/IW/G3AOKA47OU262NUI16VTYE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/5/IW/G3AOKA47OU262NUI16VTYE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/6/N4/T1XEO0RW6S5CV9TXDVWI1E.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/6/N4/T1XEO0RW6S5CV9TXDVWI1E.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/4X/ABYDNL6KJ78T3NHDZTFUCO.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/ZQ/OP9L0XOZ1CKQTKUJWQW4XX.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/ZQ/OP9L0XOZ1CKQTKUJWQW4XX.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/VG/ZT7LHZIP82Q5M8VDP59V9K.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/VG/ZT7LHZIP82Q5M8VDP59V9K.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/TowerArcher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/TowerArcher.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/DirtRoad1_ao.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/DirtRoad1_diffuseOriginal.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/DirtRoad1_height.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/DirtRoad1_metallic.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/DirtRoad1_normal.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/DirtRoad1_smoothness.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/dirt_road__fantasy__dirt__brown__3153031228_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/dirt_road__fantasy__dirt__brown__3153031228_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/dirt_road__fantasy__dirt__brown__3153031228__ncl1_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/dirtroad.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/dirtroad1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/dirtroad/dritroadtext.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/grass/grass.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/grass/grass_road__fantasy__video_games__3897791011_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/grass/grass_road__fantasy__video_games__3897791011__ncl1_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/grass/grass_road__video_games__fantasy__2406576273_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock2/a_solid_rock__fantasy__video_games__high_qua____1388756421_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock2/a_solid_rock__fantasy__video_games__high_qua____1388756421_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock2/rock2fbx.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock3/a_solid_rock__video_games__fantasy__masterpiece__2607486407_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock3/a_solid_rock__video_games__fantasy__masterpiece__2607486407_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock3/rock3.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock4/a_solid_rock__video_games__fantasy__masterpiece__1258888954_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock4/a_solid_rock__video_games__fantasy__masterpiece__1258888954_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rock4/rock4.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rockroad/a_rock_solid_path__whole_rock__fantasy__video_games__1400396026.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rockroad/a_rock_solid_path__whole_rock__fantasy__video_games__2409249373.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/rockroad/rockroad.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tower/00000-964060080-masterpiece__best_quality__body_facing_right__side_view.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tower/00000-964060080-masterpiece__best_quality__body_facing_right__side_view__1man__blue_eyes__red_hood__simple_background__whole_body__solo__fantas.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tower/00000-964060080-masterpiece__best_quality__body_facing_right__side_view__1man__blue_eyes__red_hood__simple_background__whole_body__solo__fantas_Sprite.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tower/tower.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree1/a_tree__video_game_art__fantasy__612802231_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree1/a_tree__video_game_art__fantasy__612802231_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree1/tree.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree2/a_tree__video_games__fantasy__green_leafs__brown_bark__12714504.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree2/a_tree__video_games__fantasy__green_leafs__brown_bark__12714505.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree2/tree2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree3/a_tree__video_games__fantasy__849097844_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree3/a_tree__video_games__fantasy__849097844_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree3/a_tree__video_games__fantasy__849097844__ncl1_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree3/tree3.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree4/a_tree__fantasy__video_games__3760264411_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree4/a_tree__fantasy__video_games__521058940_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree4/tree4.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree5/a_tree__video_games__fantasy__2941566114_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree5/a_tree__video_games__fantasy__371850424_.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TopDown/Env/tree5/tree5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/6C/P6VC0SXQH5MLOHE3SWNWRR.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/GC/PD0SPC6BOZGAWV7233XDA0.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/HD/GYI11NSX4FV9ID9E1J6O6F.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/OG/5MJUB1LW6QDABMYMSHJQUG.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/PM/LCEHYB4PEKK9IJ8GMTPKGF.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/XF/5BF6OPQHDS3O8OXF21BBLE.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/YT/3ZFN5SCMHT2AVI4H7A0WQG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/YT/3ZFN5SCMHT2AVI4H7A0WQG.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/3D/CF7TMAM6ZAFHXA97PR5YID.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/6R/P116Z7ILPZFDD15DIRVGY3.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/D0/PGOUUWD2L6GAX8626P4SJ6.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/JW/XBGEML9RZLW2ITRT8EX3C7.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/0X/KC8GT9A7BQ0UT09OHZ8UHE.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/56/1MP5M9BBUSC0TSRSQJ3K4F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/56/1MP5M9BBUSC0TSRSQJ3K4F.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/D9/YF9NLR9HTKKPS05JSQ71MH.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/M1/3V9CXL8LN00AVKX0Q691SD.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/06/747N4KW39QONVDH2LPH4N0.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/0A/TKDWPBZQ3TNOFW838BFQ8T.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/6U/HRLNGOYOVZR141N95CFW3I.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/FY/B6TLWEYWUTNR5PAQH1EW2E.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/QK/YZ6UCOBO5ZB6M7RTJV83MY.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/QK/YZ6UCOBO5ZB6M7RTJV83MY.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/4/51/EG3HZW8IJ61D5BAQWQCS0W.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/4/8M/SILE7BFTFJFAMCI18YIGQV.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/5/IW/G3AOKA47OU262NUI16VTYE.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/6/GO/Y2FGKAXR9BIB8EWHSZ6PIW.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/6/N4/T1XEO0RW6S5CV9TXDVWI1E.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/6/SX/BIP3KOO566LU19O9EX71TK.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/7/3N/KVRFWJJ9MY75R8HOZ4Q66T.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/7/KR/713TPFJQ37374AD3S4IX5L.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/LV/U7TKEAZDOJ6TFPH1HBDZJ7.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/PY/2XQDBISTQ0SBFQFZUFZ3S6.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/JL/CE5RJ1Z396WNMDVGIX5A0R.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/JL/CE5RJ1Z396WNMDVGIX5A0R.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/KW/4YGM6FRTEB80U3JZM7SWR5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/ZQ/OP9L0XOZ1CKQTKUJWQW4XX.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/70/CSJA8NKUAMCAH7H0KF4F5B.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/KX/L7HZL3CDFC0SWEHTA1Z9FS.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/VG/ZT7LHZIP82Q5M8VDP59V9K.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/C/9J/AKMX75VR37H9K3DZ1EUXX7.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/C/9J/AKMX75VR37H9K3DZ1EUXX7.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/VR/QQO5ZM024GWE0G5DRAP7I5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/VR/QQO5ZM024GWE0G5DRAP7I5.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/TopDownMap_2/0/F1/2N23U8VUPG5C0RW63V3UV8.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/TopDownMap_2/0/F1/2N23U8VUPG5C0RW63V3UV8.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/TopDownMap_2/E/35/1W6EEXL4ZA56TYRCA9AELH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/TopDownMap_2/E/35/1W6EEXL4ZA56TYRCA9AELH.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/Grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/Grid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/AO/6L9NUAYAWC811CWJOJV6OV.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/AO/6L9NUAYAWC811CWJOJV6OV.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/B8/NYE8I92Q1N6HSEWOW18PDS.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/TH/RFFO12YHO8VNM5JPE1XECM.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/YT/LH2Y6F4WHO6CRJBKTR9A4E.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/C/9J/AKMX75VR37H9K3DZ1EUXX7.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/2M/6WBZM6LSTGOUE4D7GT9QG1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/MD/3ZDGA63X56QFGR9GLVGAWO.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/QG/XVL8OEKT4XDH1BKSHY8HIK.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/VR/QQO5ZM024GWE0G5DRAP7I5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/XJ/ISLGYZ9DPS3A7B4X968ANT.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/C1/5ZNSDEQTUXPNOCV3XZ7V0X.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/TT/Z54LU7KK991DY7813ZQVVZ.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/Z9/XCB5WWMMWANJSSLP8T2CBF.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TileBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TileBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerBase.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,16 +128,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.SDINZ">
     <configuration name="SDINZ" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -174,6 +261,8 @@
       <option name="presentableId" value="Default" />
       <updated>1691235942633</updated>
       <workItem from="1691235984629" duration="27094000" />
+      <workItem from="1694867394791" duration="801000" />
+      <workItem from="1694947926184" duration="3551000" />
     </task>
     <servers />
   </component>

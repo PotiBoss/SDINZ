@@ -35,7 +35,7 @@ void AEnemySpawner::CreateNewRoute()
 
 void AEnemySpawner::SpawnEnemy(TSubclassOf<AEnemyBase> EnemyToSpawn, ARoute* Route)
 {
-	AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemyToSpawn,GetActorLocation(), GetActorRotation());
+	AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemyToSpawn, GetActorLocation(), GetActorRotation());
 
 	if(Route)
 	{

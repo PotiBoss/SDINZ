@@ -80,7 +80,7 @@ void AMainPlayerController::OnMousePress()
 			Grid->TileToGridLocation(Row, Column, true, bIsValid2, Location2D);
 
 			FActorSpawnParameters SpawnParameters;
-			GetWorld()->SpawnActor<ATowerBase>(TowerClass, FVector(Location2D.X, Location2D.Y, 100),
+			GetWorld()->SpawnActor<ATowerBase>(TowerClass, FVector(Location2D.X - 50, Location2D.Y, 50),
 				FRotator(0,270,30), SpawnParameters);
 		}
 	}

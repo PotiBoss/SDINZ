@@ -3,6 +3,8 @@
 
 #include "EnemyGoal.h"
 
+#include "EnemyBase.h"
+
 // Sets default values
 AEnemyGoal::AEnemyGoal()
 {
@@ -15,6 +17,17 @@ AEnemyGoal::AEnemyGoal()
 void AEnemyGoal::BeginPlay()
 {
 	Super::BeginPlay();
+}
+
+void AEnemyGoal::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	AEnemyBase* Enemy = Cast<AEnemyBase>(OtherActor);
+	if(Enemy)	
+	{
+		Enemy->Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("EnemyGoal cpp enemy reached end"));
+	}
 }
 
 // Called every frame

@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "EnemyBase.h"
-#include "Engine/SplineMeshActor.h"
 #include "GameFramework/Actor.h"
 #include "EnemySpawner.generated.h"
 

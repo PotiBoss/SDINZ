@@ -18,7 +18,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION()
-void TileClicked();
+	void TileClicked();
 
 protected:
 	// Called when the game starts or when spawned
