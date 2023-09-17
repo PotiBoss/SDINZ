@@ -2,20 +2,37 @@
 
 
 #include "EnemyBase.h"
+
+#include "HealthBarWidget.h"
 #include "Route.h"
+#include "Blueprint/UserWidget.h"
 #include "Components/SplineComponent.h"
+#include "Components/WidgetComponent.h"
 
 
 AEnemyBase::AEnemyBase()
 {
-	Speed = 100.0f; // Adjust the enemy speed as desired
+	Speed = 100.0f; 
 	CurrentDistance = 0.0f;
+	
+	HealthBarComp = CreateDefaultSubobject<UWidgetComponent>("HealthBarComp");
+}
+
+void AEnemyBase::BeginPlay()
+{
+	Super::BeginPlay();
+	HealthBarWidget = Cast<UHealthBarWidget>(HealthBarComp->GetWidget());
+	if(HealthBarWidget)
+	{
+		//HealthBarComp->SetWorldRotation(FRotator(0,0, 90.0f));
+		HealthBarWidget->SetHealthBar(100.0f);
+	}
 }
 
 void AEnemyBase::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-
+	
 	MoveAcrossSpline(DeltaSeconds);
 }
 

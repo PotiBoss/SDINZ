@@ -23,7 +23,7 @@ ATowerProjectile::ATowerProjectile()
 void ATowerProjectile::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Trap collision started overlaping c++ without override"));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Trap collision started overlaping c++ without override"));
 }
 
 // Called when the game starts or when spawned
@@ -39,9 +39,6 @@ void ATowerProjectile::Tick(float DeltaSeconds)
 
 	float CurrentDistance = FVector::Distance(GetActorLocation(), StartingLocation);
 
-	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%f"), CurrentDistance));
-	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%f"), TotalDistance));
-	
 	if(TotalDistance >= CurrentDistance)
 	{
 		FVector CurrentLocation = GetActorLocation();
@@ -49,12 +46,14 @@ void ATowerProjectile::Tick(float DeltaSeconds)
 		CurrentLocation += Direction * Speed  * DeltaSeconds;
 
 		SetActorLocation(CurrentLocation);
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Small"));
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%f"), CurrentDistance));
 	}
 	else
 	{
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Bik"));
+		if(TargetedEnemy)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Projectile collision c++ hit enemy "));
+		}
+		Destroy();
 	}
 }
 

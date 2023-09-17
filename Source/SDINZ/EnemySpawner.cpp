@@ -14,7 +14,6 @@ AEnemySpawner::AEnemySpawner()
 
 	TriggerVolume = CreateDefaultSubobject<UBoxComponent>("TriggerBox");
 	SetRootComponent(TriggerVolume);
-
 }
 
 // Called when the game starts or when spawned

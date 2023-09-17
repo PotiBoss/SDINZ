@@ -21,6 +21,8 @@ public:
 	AEnemyBase();
 	
 	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void BeginPlay() override;
 	
 	UFUNCTION()
 	void SetupSpline(ARoute* Spline);
@@ -35,5 +37,10 @@ public:
 	float Speed;
 	UPROPERTY()
 	float CurrentDistance;
-	
+
+	UPROPERTY(EditAnywhere)
+	class UWidgetComponent* HealthBarComp;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+	class UHealthBarWidget* HealthBarWidget;
 };

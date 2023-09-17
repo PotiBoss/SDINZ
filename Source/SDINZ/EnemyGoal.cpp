@@ -4,13 +4,17 @@
 #include "EnemyGoal.h"
 
 #include "EnemyBase.h"
+#include "Components/BoxComponent.h"
 
 // Sets default values
 AEnemyGoal::AEnemyGoal()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	TriggerVolume = CreateDefaultSubobject<UBoxComponent>("TriggerBox");
+	SetRootComponent(TriggerVolume);
 
+	TriggerVolume->OnComponentBeginOverlap.AddDynamic(this, &AEnemyGoal::OnOverlap);
 }
 
 // Called when the game starts or when spawned
@@ -26,7 +30,7 @@ void AEnemyGoal::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 	if(Enemy)	
 	{
 		Enemy->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("EnemyGoal cpp enemy reached end"));
+		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("EnemyGoal cpp enemy reached end"));
 	}
 }
 
