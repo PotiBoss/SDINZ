@@ -21,10 +21,8 @@ void AEnemySpawner::BeginPlay()
 {
 	Super::BeginPlay();
 
-	for (auto EnemyClass : Enemies)
-	{
-		SpawnEnemy(EnemyClass, Routes[0]);
-	}
+	GetWorldTimerManager().SetTimer(
+		SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[0].DelayBetweenEnemies, false, 1.0f);
 }
 
 void AEnemySpawner::CreateNewRoute()
@@ -32,13 +30,32 @@ void AEnemySpawner::CreateNewRoute()
 	Routes.Add(GetWorld()->SpawnActor<ARoute>(GetActorLocation(), GetActorRotation()));
 }
 
-void AEnemySpawner::SpawnEnemy(TSubclassOf<AEnemyBase> EnemyToSpawn, ARoute* Route)
+void AEnemySpawner::SpawnEnemy()
 {
-	AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemyToSpawn, GetActorLocation(), GetActorRotation());
-
+	AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemiesConfig[WaveIndex].EnemyClass, GetActorLocation(), GetActorRotation());
+	ARoute* Route = Routes[EnemiesConfig[WaveIndex].RouteIndex];
+	
 	if(Route)
 	{
 		EnemySpawned->SetupSpline(Route);
+	}
+	
+	// Spawn next wave
+	if(--EnemiesConfig[WaveIndex].NumberOfEnemies <= 0)
+	{
+		WaveIndex++;
+
+		if(WaveIndex <= EnemiesConfig.Num())
+		{
+			GetWorldTimerManager().SetTimer(
+	SpawnHandle, this, &AEnemySpawner::SpawnEnemy,
+	EnemiesConfig[WaveIndex - 1].DelayBetweenNextWave, false, EnemiesConfig[WaveIndex - 1].DelayBetweenNextWave);
+		}
+	}
+	else
+	{
+		GetWorldTimerManager().SetTimer(
+	SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[WaveIndex].DelayBetweenEnemies, false, EnemiesConfig[WaveIndex].DelayBetweenEnemies);
 	}
 }
 

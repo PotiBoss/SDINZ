@@ -38,6 +38,12 @@ public:
 	UPROPERTY()
 	float CurrentDistance;
 
+	UPROPERTY()
+	float Health;
+
+	UPROPERTY()
+	float MaxHealth;
+
 	UPROPERTY(EditAnywhere)
 	class UWidgetComponent* HealthBarComp;
 

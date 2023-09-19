@@ -3,6 +3,8 @@
 
 #include "TowerProjectile.h"
 
+#include "EnemyBase.h"
+#include "HealthBarWidget.h"
 #include "NiagaraComponent.h"
 #include "Components/SphereComponent.h"
 
@@ -43,7 +45,7 @@ void ATowerProjectile::Tick(float DeltaSeconds)
 	{
 		FVector CurrentLocation = GetActorLocation();
 
-		CurrentLocation += Direction * Speed  * DeltaSeconds;
+		CurrentLocation += Direction * Speed * DeltaSeconds;
 
 		SetActorLocation(CurrentLocation);
 	}
@@ -51,7 +53,12 @@ void ATowerProjectile::Tick(float DeltaSeconds)
 	{
 		if(TargetedEnemy)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Projectile collision c++ hit enemy "));
+			TargetedEnemy->Health -= Damage;
+			TargetedEnemy->HealthBarWidget->SetHealthBar(TargetedEnemy->Health / TargetedEnemy->MaxHealth);
+			if(TargetedEnemy->Health <= 0)
+			{
+				TargetedEnemy->Destroy();
+			}
 		}
 		Destroy();
 	}

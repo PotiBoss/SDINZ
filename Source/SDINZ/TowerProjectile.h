@@ -33,7 +33,10 @@ public:
 	float TotalDistance = 0.f;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float Speed = 100.0f;
+	float Speed = 250.0f;
+
+	UPROPERTY()
+	float Damage = 5.0f;
 
 	UPROPERTY()
 	class AEnemyBase* TargetedEnemy;

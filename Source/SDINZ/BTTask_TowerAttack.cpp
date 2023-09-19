@@ -28,6 +28,8 @@ EBTNodeResult::Type UBTTask_TowerAttack::ExecuteTask(UBehaviorTreeComponent& Own
 		Projectile->Direction = (Target->GetActorLocation() - Tower->GetActorLocation()).GetSafeNormal();
 		Projectile->TotalDistance =  FVector::Distance(Target->GetActorLocation(), Tower->GetActorLocation());
 		Projectile->StartingLocation = Tower->GetActorLocation();
+
+		Projectile->TargetedEnemy = Target;
 		
 		return EBTNodeResult::Succeeded;	
 	}

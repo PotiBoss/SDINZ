@@ -12,10 +12,13 @@
 
 AEnemyBase::AEnemyBase()
 {
-	Speed = 100.0f; 
+	Speed = 75.0f; 
 	CurrentDistance = 0.0f;
+	Health = 100.0f;
+	MaxHealth = 100.0f;
 	
 	HealthBarComp = CreateDefaultSubobject<UWidgetComponent>("HealthBarComp");
+	HealthBarComp->SetupAttachment(RootComponent);
 }
 
 void AEnemyBase::BeginPlay()
@@ -24,8 +27,7 @@ void AEnemyBase::BeginPlay()
 	HealthBarWidget = Cast<UHealthBarWidget>(HealthBarComp->GetWidget());
 	if(HealthBarWidget)
 	{
-		//HealthBarComp->SetWorldRotation(FRotator(0,0, 90.0f));
-		HealthBarWidget->SetHealthBar(100.0f);
+		HealthBarWidget->SetHealthBar(1.0f);
 	}
 }
 

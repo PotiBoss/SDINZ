@@ -9,6 +9,8 @@
 #include "BehaviorTree/BehaviorTreeComponent.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Perception/AIPerceptionComponent.h"
+#include "Perception/AISenseConfig.h"
+#include "Perception/AISense_Sight.h"
 
 ATowerController::ATowerController()
 {
