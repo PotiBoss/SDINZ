@@ -14,6 +14,8 @@ AEnemySpawner::AEnemySpawner()
 
 	TriggerVolume = CreateDefaultSubobject<UBoxComponent>("TriggerBox");
 	SetRootComponent(TriggerVolume);
+
+	WaveIndex = 0;
 }
 
 // Called when the game starts or when spawned
@@ -21,8 +23,11 @@ void AEnemySpawner::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GetWorldTimerManager().SetTimer(
-		SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[0].DelayBetweenEnemies, false, EnemiesConfig[0].DelayBetweenNextWave);
+	if(!EnemiesConfig.IsEmpty())
+	{
+		GetWorldTimerManager().SetTimer(
+		SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[0].DelayBetweenEnemies, false, EnemiesConfig[0].DelayBetweenNextWave);	
+	}
 }
 
 void AEnemySpawner::CreateNewRoute()
@@ -32,28 +37,29 @@ void AEnemySpawner::CreateNewRoute()
 
 void AEnemySpawner::SpawnEnemy()
 {
-	AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemiesConfig[WaveIndex].EnemyClass, GetActorLocation(), GetActorRotation());
-	ARoute* Route = Routes[EnemiesConfig[WaveIndex].RouteIndex];
-	
-	if(Route)
-	{
-		EnemySpawned->SetupSpline(Route);
-	}
-	
 	// Spawn next wave
-	if(--EnemiesConfig[WaveIndex].NumberOfEnemies <= 0)
+	if(--EnemiesConfig[WaveIndex].NumberOfEnemies < 0)
 	{
 		WaveIndex++;
-
-		if(WaveIndex <= EnemiesConfig.Num())
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), WaveIndex));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%d"), EnemiesConfig.Num()));
+		if(WaveIndex < EnemiesConfig.Num())
 		{
 			GetWorldTimerManager().SetTimer(
 	SpawnHandle, this, &AEnemySpawner::SpawnEnemy,
-	EnemiesConfig[WaveIndex - 1].DelayBetweenNextWave, false, EnemiesConfig[WaveIndex - 1].DelayBetweenNextWave);
+	EnemiesConfig[WaveIndex].DelayBetweenNextWave, false, EnemiesConfig[WaveIndex].DelayBetweenNextWave);
 		}
 	}
 	else
 	{
+		AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemiesConfig[WaveIndex].EnemyClass, GetActorLocation(), GetActorRotation());
+		ARoute* Route = Routes[EnemiesConfig[WaveIndex].RouteIndex];
+	
+		if(Route)
+		{
+			EnemySpawned->SetupSpline(Route);
+		}
+		
 		GetWorldTimerManager().SetTimer(
 	SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[WaveIndex].DelayBetweenEnemies, false, EnemiesConfig[WaveIndex].DelayBetweenEnemies);
 	}
