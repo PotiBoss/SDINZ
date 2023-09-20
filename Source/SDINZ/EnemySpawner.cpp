@@ -22,12 +22,6 @@ AEnemySpawner::AEnemySpawner()
 void AEnemySpawner::BeginPlay()
 {
 	Super::BeginPlay();
-
-	if(!EnemiesConfig.IsEmpty())
-	{
-		GetWorldTimerManager().SetTimer(
-		SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[0].DelayBetweenEnemies, false, EnemiesConfig[0].DelayBetweenNextWave);	
-	}
 }
 
 void AEnemySpawner::CreateNewRoute()
@@ -35,34 +29,11 @@ void AEnemySpawner::CreateNewRoute()
 	Routes.Add(GetWorld()->SpawnActor<ARoute>(GetActorLocation(), GetActorRotation()));
 }
 
-void AEnemySpawner::SpawnEnemy()
+void AEnemySpawner::SpawnEnemy(TSubclassOf<AEnemyBase> EnemyClass, int RouteIndex)
 {
-	// Spawn next wave
-	if(--EnemiesConfig[WaveIndex].NumberOfEnemies < 0)
-	{
-		WaveIndex++;
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), WaveIndex));
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%d"), EnemiesConfig.Num()));
-		if(WaveIndex < EnemiesConfig.Num())
-		{
-			GetWorldTimerManager().SetTimer(
-	SpawnHandle, this, &AEnemySpawner::SpawnEnemy,
-	EnemiesConfig[WaveIndex].DelayBetweenNextWave, false, EnemiesConfig[WaveIndex].DelayBetweenNextWave);
-		}
-	}
-	else
-	{
-		AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemiesConfig[WaveIndex].EnemyClass, GetActorLocation(), GetActorRotation());
-		ARoute* Route = Routes[EnemiesConfig[WaveIndex].RouteIndex];
-	
-		if(Route)
-		{
-			EnemySpawned->SetupSpline(Route);
-		}
-		
-		GetWorldTimerManager().SetTimer(
-	SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[WaveIndex].DelayBetweenEnemies, false, EnemiesConfig[WaveIndex].DelayBetweenEnemies);
-	}
+	AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemyClass, GetActorLocation(), GetActorRotation());
+	EnemySpawned->SetupSpline(Routes[RouteIndex]);
+	GEngine->AddOnScreenDebugMessage(-1,3.0f, FColor::Orange, TEXT("Spawn guy"));
 }
 
 // Called every frame

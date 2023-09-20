@@ -7,12 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/5C/B6V9LFDJN0CURNSFZ43LG8.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/5C/B6V9LFDJN0CURNSFZ43LG8.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/56/1MP5M9BBUSC0TSRSQJ3K4F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/56/1MP5M9BBUSC0TSRSQJ3K4F.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/V0/X8CSODJ9AEBMRKKGY985MY.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/V0/X8CSODJ9AEBMRKKGY985MY.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/GW/ZQ19SMOCDC1KIRDPO7H3AD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/GW/ZQ19SMOCDC1KIRDPO7H3AD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/JN/NHAMZM0IIK8L5VS2XBSYUS.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/JN/NHAMZM0IIK8L5VS2XBSYUS.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/GJ/1I8R6SIVAHAGRCWENLIUIL.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/GJ/1I8R6SIVAHAGRCWENLIUIL.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/HealthBarWidget.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/HealthBarWidget.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SDINZ/SpawnerManager.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SDINZ/SpawnerManager.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -168,7 +167,7 @@
       <workItem from="1694867394791" duration="801000" />
       <workItem from="1694947926184" duration="13323000" />
       <workItem from="1695054124091" duration="6723000" />
-      <workItem from="1695203997530" duration="9776000" />
+      <workItem from="1695203997530" duration="11181000" />
     </task>
     <servers />
   </component>

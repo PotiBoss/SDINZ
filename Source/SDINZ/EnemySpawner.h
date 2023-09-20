@@ -12,26 +12,6 @@ class AEnemyBase;
 class ASplineMeshActor;
 class ARoute;
 
-USTRUCT(BlueprintType)
-struct FEnemyWave
-{
-	GENERATED_BODY()
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TSubclassOf<AEnemyBase> EnemyClass;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int RouteIndex;
-	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int NumberOfEnemies;
-		
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int DelayBetweenEnemies;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int DelayBetweenNextWave;
-};
-
 UCLASS()
 class SDINZ_API AEnemySpawner : public AActor
 {
@@ -43,6 +23,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION()
+	void SpawnEnemy(TSubclassOf<AEnemyBase> EnemyClass, int RouteIndex);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -51,13 +34,6 @@ protected:
 	void CreateNewRoute();
 
 	// Spawns enemy from given class to walk a given route
-	UFUNCTION()
-	void SpawnEnemy();
-	//TSubclassOf<AEnemyBase> EnemyToSpawn, ARoute* Route = nullptr
-	// Spawns enemy from given class to walk a given route
-	//UFUNCTION()
-	//void SpawnNextWave(TSubclassOf<AEnemyBase> EnemyToSpawn, ARoute* Route = nullptr);
-
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UBoxComponent* TriggerVolume;
 
@@ -67,8 +43,8 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<TSubclassOf<AEnemyBase>> Enemies;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TArray<FEnemyWave> EnemiesConfig;
+//	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+//	TArray<FEnemyWave> EnemiesConfig;
 
 	UPROPERTY()
 	int EnemyIndex;
