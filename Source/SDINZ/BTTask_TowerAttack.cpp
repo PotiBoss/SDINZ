@@ -19,21 +19,38 @@ EBTNodeResult::Type UBTTask_TowerAttack::ExecuteTask(UBehaviorTreeComponent& Own
 	
 	ATowerBase* Tower = Cast<ATowerController>(OwnerComp.GetAIOwner())->TowerOwner;
 	AEnemyBase* Target = Cast<ATowerController>(OwnerComp.GetAIOwner())->CurrentTarget;
+
+	ATowerController* TowerController = Cast<ATowerController>(OwnerComp.GetAIOwner());
+	AEnemyBase* CurrentEnemy = nullptr;
 	
-	if(Tower && Target && Tower->ProjectileClass)
+	for (auto Enemy : TowerController->EnemiesInRange)
+	{
+		if(Enemy)
+		{
+			if(!CurrentEnemy) {CurrentEnemy = Enemy;}
+			else if(
+			FVector::Dist(Enemy->GetActorLocation(), TowerController->K2_GetActorLocation()) <
+			FVector::Dist(CurrentEnemy->GetActorLocation(), TowerController->K2_GetActorLocation())
+			)
+			{
+				CurrentEnemy = Enemy;
+			}
+		}
+	}
+	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), TowerController->EnemiesInRange.Num()));
+	
+	if(Tower && CurrentEnemy && Tower->ProjectileClass)
 	{
 		// Here we deal damage
 		ATowerProjectile* Projectile = GetWorld()->SpawnActor<ATowerProjectile>(Tower->ProjectileClass, Tower->GetActorLocation(), Tower->GetActorRotation());
 
-		Projectile->Direction = (Target->GetActorLocation() - Tower->GetActorLocation()).GetSafeNormal();
-		Projectile->TotalDistance =  FVector::Distance(Target->GetActorLocation(), Tower->GetActorLocation());
+		Projectile->Direction = (CurrentEnemy->GetActorLocation() - Tower->GetActorLocation()).GetSafeNormal();
+		Projectile->TotalDistance =  FVector::Distance(CurrentEnemy->GetActorLocation(), Tower->GetActorLocation());
 		Projectile->StartingLocation = Tower->GetActorLocation();
 
-		Projectile->TargetedEnemy = Target;
+		Projectile->TargetedEnemy = CurrentEnemy;
 		
 		return EBTNodeResult::Succeeded;	
 	}
-
-	
 	return  EBTNodeResult::Failed;
 }

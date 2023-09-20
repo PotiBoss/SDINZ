@@ -10,13 +10,36 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Perception/AIPerceptionComponent.h"
 #include "Perception/AISenseConfig.h"
-#include "Perception/AISense_Sight.h"
 
 ATowerController::ATowerController()
 {
 	BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("Behavior Tree Component"));
 	BlackboardComponent = CreateDefaultSubobject<UBlackboardComponent>(TEXT("Blackboard Component"));
 
+}
+
+void ATowerController::ChooseTarget()
+{
+	AEnemyBase* CurrentEnemy = nullptr;
+	
+	for (auto Enemy : EnemiesInRange)
+	{
+		if(Enemy)
+		{
+			if(!CurrentTarget) {CurrentTarget = Enemy;}
+			else if(
+				FVector::Dist(Enemy->GetActorLocation(), K2_GetActorLocation()) <
+				FVector::Dist(CurrentTarget->GetActorLocation(), K2_GetActorLocation())
+				)
+			{
+				//CurrentEnemy = Enemy;
+				bHasTarget = true;
+				CurrentTarget = Enemy;
+				GetBlackboardComponent()->SetValueAsObject("Target", CurrentTarget);
+				CurrentTarget->TowerControllers.Add(this);
+			}
+		}
+	}
 }
 
 void ATowerController::OnPossess(APawn* InPawn)
@@ -43,18 +66,17 @@ void ATowerController::OnPossess(APawn* InPawn)
 void ATowerController::OnStimulusChange(AActor* UpdatedActor, FAIStimulus Stimulus)
 {
 	AEnemyBase* Enemy = Cast<AEnemyBase>(UpdatedActor);
-
+	
 	if(Stimulus.IsActive())
 	{
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Enemy in range"));
 		if(Enemy)
 		{
 			EnemiesInRange.AddUnique(Enemy);
+			Enemy->TowerControllers.Add(this);
 		}
 	}
 	if(!Stimulus.IsActive())
 	{
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("Not in range"));
 		if(Enemy)
 		{
 			if(CurrentTarget == Enemy)
@@ -64,20 +86,6 @@ void ATowerController::OnStimulusChange(AActor* UpdatedActor, FAIStimulus Stimul
 				GetBlackboardComponent()->SetValueAsObject("Target", nullptr);
 			}
 			EnemiesInRange.Remove(Enemy);
-		}
-	}
-	for (auto EnemyArr : EnemiesInRange)
-	{
-		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%s"), *EnemyArr->GetName()));
-	}
-
-	if(!bHasTarget)
-	{
-		if(!EnemiesInRange.IsEmpty())
-		{
-			bHasTarget = true;
-			CurrentTarget = EnemiesInRange[0];
-			GetBlackboardComponent()->SetValueAsObject("Target", CurrentTarget);
 		}
 	}
 }

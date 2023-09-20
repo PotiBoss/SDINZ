@@ -6,8 +6,11 @@
 #include "PaperCharacter.h"
 #include "EnemyBase.generated.h"
 
+class ATowerController;
 class ASplineMeshActor;
 class ARoute;
+
+DECLARE_DELEGATE(FFocusingTowers)
 
 /**
  * 
@@ -30,8 +33,20 @@ public:
 	UFUNCTION()
 	void MoveAcrossSpline(float DeltaSeconds);
 
+	UFUNCTION()
+	void FocusingTowers();
+
+	UFUNCTION()
+	void Die();
+	
 	UPROPERTY()
 	ARoute* Route;
+
+	UPROPERTY()
+	TArray<ATowerController*> TowerControllers;
+
+	FFocusingTowers FocusingTowersDelegate;
+	
 
 	UPROPERTY(EditAnywhere, Category = "Spline")
 	float Speed;

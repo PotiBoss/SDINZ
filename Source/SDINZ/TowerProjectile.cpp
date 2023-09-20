@@ -57,7 +57,7 @@ void ATowerProjectile::Tick(float DeltaSeconds)
 			TargetedEnemy->HealthBarWidget->SetHealthBar(TargetedEnemy->Health / TargetedEnemy->MaxHealth);
 			if(TargetedEnemy->Health <= 0)
 			{
-				TargetedEnemy->Destroy();
+				TargetedEnemy->Die();
 			}
 		}
 		Destroy();

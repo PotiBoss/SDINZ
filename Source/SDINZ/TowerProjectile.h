@@ -35,8 +35,8 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float Speed = 250.0f;
 
-	UPROPERTY()
-	float Damage = 5.0f;
+	UPROPERTY(EditAnywhere)
+	float Damage = 25.0f;
 
 	UPROPERTY()
 	class AEnemyBase* TargetedEnemy;

@@ -21,6 +21,8 @@ class SDINZ_API ATowerController : public AAIController
 	
 public:
 	ATowerController();
+
+	void ChooseTarget();
 	
 	UPROPERTY(BlueprintReadWrite)
 	ATowerBase* TowerOwner;
@@ -28,17 +30,18 @@ public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	AEnemyBase* CurrentTarget;
 
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	TArray<AEnemyBase*> EnemiesInRange;
+	
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
+	bool bHasTarget = false;;
+	
 protected:
 	UFUNCTION()
 	void OnStimulusChange(AActor* UpdatedActor, struct FAIStimulus Stimulus);
 
 	virtual void OnPossess(APawn* InPawn) override;
 
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
-	TArray<AEnemyBase*> EnemiesInRange;
-
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
-	bool bHasTarget = false;;
 	
 private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = true))
