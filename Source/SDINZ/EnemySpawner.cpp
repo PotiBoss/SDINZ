@@ -22,7 +22,7 @@ void AEnemySpawner::BeginPlay()
 	Super::BeginPlay();
 
 	GetWorldTimerManager().SetTimer(
-		SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[0].DelayBetweenEnemies, false, 1.0f);
+		SpawnHandle, this, &AEnemySpawner::SpawnEnemy, EnemiesConfig[0].DelayBetweenEnemies, false, EnemiesConfig[0].DelayBetweenNextWave);
 }
 
 void AEnemySpawner::CreateNewRoute()

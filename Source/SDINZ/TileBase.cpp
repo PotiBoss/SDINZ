@@ -22,7 +22,7 @@ void ATileBase::BeginPlay()
 
 void ATileBase::TileClicked()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("Clicked tile: %s"), *GetName()));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("Clicked tile: %s"), *GetName()));
 }
 
 // Called every frame
