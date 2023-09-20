@@ -18,30 +18,6 @@ ATowerController::ATowerController()
 
 }
 
-void ATowerController::ChooseTarget()
-{
-	AEnemyBase* CurrentEnemy = nullptr;
-	
-	for (auto Enemy : EnemiesInRange)
-	{
-		if(Enemy)
-		{
-			if(!CurrentTarget) {CurrentTarget = Enemy;}
-			else if(
-				FVector::Dist(Enemy->GetActorLocation(), K2_GetActorLocation()) <
-				FVector::Dist(CurrentTarget->GetActorLocation(), K2_GetActorLocation())
-				)
-			{
-				//CurrentEnemy = Enemy;
-				bHasTarget = true;
-				CurrentTarget = Enemy;
-				GetBlackboardComponent()->SetValueAsObject("Target", CurrentTarget);
-				CurrentTarget->TowerControllers.Add(this);
-			}
-		}
-	}
-}
-
 void ATowerController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
@@ -79,13 +55,8 @@ void ATowerController::OnStimulusChange(AActor* UpdatedActor, FAIStimulus Stimul
 	{
 		if(Enemy)
 		{
-			if(CurrentTarget == Enemy)
-			{
-				bHasTarget = false;
-				CurrentTarget = nullptr;
-				GetBlackboardComponent()->SetValueAsObject("Target", nullptr);
-			}
 			EnemiesInRange.Remove(Enemy);
+			Enemy->TowerControllers.Remove(this);
 		}
 	}
 }

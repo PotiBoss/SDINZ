@@ -31,8 +31,6 @@ void AEnemyBase::BeginPlay()
 	{
 		HealthBarWidget->SetHealthBar(1.0f);
 	}
-
-	FocusingTowersDelegate.BindUFunction(this, "FocusingTowers");
 }
 
 void AEnemyBase::Tick(float DeltaSeconds)
@@ -69,19 +67,6 @@ void AEnemyBase::MoveAcrossSpline(float DeltaSeconds)
 		// Set the actor's location based on the new distance along the spline
 		SetActorLocation(Route->SplineComponent->GetLocationAtDistanceAlongSpline(CurrentDistance, ESplineCoordinateSpace::World));
 	}
-}
-
-void AEnemyBase::FocusingTowers()
-{
-/*	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("odpalone"));
-	for (auto Tower : TowerControllers)
-	{
-		Tower->bHasTarget = false;
-		Tower->CurrentTarget = nullptr;
-		Tower->GetBlackboardComponent()->SetValueAsObject("Target", nullptr);
-		
-		Tower->ChooseTarget();
-	}*/
 }
 
 void AEnemyBase::Die()

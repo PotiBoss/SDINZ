@@ -18,8 +18,6 @@ EBTNodeResult::Type UBTTask_TowerAttack::ExecuteTask(UBehaviorTreeComponent& Own
 	Super::ExecuteTask(OwnerComp, NodeMemory);
 	
 	ATowerBase* Tower = Cast<ATowerController>(OwnerComp.GetAIOwner())->TowerOwner;
-	AEnemyBase* Target = Cast<ATowerController>(OwnerComp.GetAIOwner())->CurrentTarget;
-
 	ATowerController* TowerController = Cast<ATowerController>(OwnerComp.GetAIOwner());
 	AEnemyBase* CurrentEnemy = nullptr;
 	
@@ -37,7 +35,6 @@ EBTNodeResult::Type UBTTask_TowerAttack::ExecuteTask(UBehaviorTreeComponent& Own
 			}
 		}
 	}
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), TowerController->EnemiesInRange.Num()));
 	
 	if(Tower && CurrentEnemy && Tower->ProjectileClass)
 	{

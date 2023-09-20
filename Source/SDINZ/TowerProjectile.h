@@ -36,7 +36,7 @@ public:
 	float Speed = 250.0f;
 
 	UPROPERTY(EditAnywhere)
-	float Damage = 25.0f;
+	float Damage = 10.0f;
 
 	UPROPERTY()
 	class AEnemyBase* TargetedEnemy;

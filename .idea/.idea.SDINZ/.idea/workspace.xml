@@ -6,16 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BT_Archer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BT_Archer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/56/1MP5M9BBUSC0TSRSQJ3K4F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/56/1MP5M9BBUSC0TSRSQJ3K4F.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/BTTask_TowerAttack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/BTTask_TowerAttack.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemyBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemyBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemyBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemyBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerProjectile.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerProjectile.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +166,7 @@
       <workItem from="1694867394791" duration="801000" />
       <workItem from="1694947926184" duration="13323000" />
       <workItem from="1695054124091" duration="6723000" />
-      <workItem from="1695203997530" duration="5682000" />
+      <workItem from="1695203997530" duration="6050000" />
     </task>
     <servers />
   </component>
