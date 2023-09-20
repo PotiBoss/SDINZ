@@ -33,7 +33,6 @@ void AEnemySpawner::SpawnEnemy(TSubclassOf<AEnemyBase> EnemyClass, int RouteInde
 {
 	AEnemyBase* EnemySpawned = GetWorld()->SpawnActor<AEnemyBase>(EnemyClass, GetActorLocation(), GetActorRotation());
 	EnemySpawned->SetupSpline(Routes[RouteIndex]);
-	GEngine->AddOnScreenDebugMessage(-1,3.0f, FColor::Orange, TEXT("Spawn guy"));
 }
 
 // Called every frame

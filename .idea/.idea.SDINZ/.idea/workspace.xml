@@ -6,10 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/GJ/1I8R6SIVAHAGRCWENLIUIL.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/GJ/1I8R6SIVAHAGRCWENLIUIL.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/7J/G4POL81629UPZZYJCNNOBX.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/7J/G4POL81629UPZZYJCNNOBX.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemySpawner.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/SpawnerManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/SpawnerManager.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +167,7 @@
       <workItem from="1694867394791" duration="801000" />
       <workItem from="1694947926184" duration="13323000" />
       <workItem from="1695054124091" duration="6723000" />
-      <workItem from="1695203997530" duration="11181000" />
+      <workItem from="1695203997530" duration="13350000" />
     </task>
     <servers />
   </component>

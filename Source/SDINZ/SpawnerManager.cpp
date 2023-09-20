@@ -20,7 +20,6 @@ ASpawnerManager::ASpawnerManager()
 
 void ASpawnerManager::SpawnNextWave()
 {
-	GEngine->AddOnScreenDebugMessage(-1,3.0f, FColor::Orange, TEXT("Wave"));
 	
 	for (auto Spawner : EnemiesConfig[WaveIndex].Spawners)
 	{
@@ -29,7 +28,6 @@ void ASpawnerManager::SpawnNextWave()
 	
 	if(++WaveIndex < EnemiesConfig.Num())
 	{
-		GEngine->AddOnScreenDebugMessage(-1,3.0f, FColor::Orange, TEXT("NextWave"));
 		GetWorldTimerManager().SetTimer(
 			SpawnHandle, this, &ASpawnerManager::SpawnNextWave, EnemiesConfig[WaveIndex - 1].DelayBetweenNextWave, false);		
 	}
