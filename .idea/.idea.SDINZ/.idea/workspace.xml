@@ -8,13 +8,42 @@
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/TowerArcher.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemyGoal.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BP_TowerArcher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BP_TowerArcher.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_MainGameUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_MainGameUI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/Y3/51N37R6C7FPBNOQD9ZO65V.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/Y3/51N37R6C7FPBNOQD9ZO65V.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/LQ/6GH2NNHQS4W16LHG2JZ4VO.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/LQ/6GH2NNHQS4W16LHG2JZ4VO.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/Z9/TNUNYDAN9B55K9VZZHA6X4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/1/Z9/TNUNYDAN9B55K9VZZHA6X4.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/2P/MSCDP3Q42TQ1XGKT2XLWLG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/2P/MSCDP3Q42TQ1XGKT2XLWLG.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/2U/U775KU84QS4GL9JVSKUK3C.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/2U/U775KU84QS4GL9JVSKUK3C.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/EE/I9ELI0GJS9HKOTR46WFBOH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/EE/I9ELI0GJS9HKOTR46WFBOH.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/NO/B6W6LDA2JLSIEV67ITS5YG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/2/NO/B6W6LDA2JLSIEV67ITS5YG.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/JK/KGEJKP7EPL4A5V69AHX2HW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/3/JK/KGEJKP7EPL4A5V69AHX2HW.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/4/BZ/UDW4XUS1CIP8ZSD03L0BXK.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/4/BZ/UDW4XUS1CIP8ZSD03L0BXK.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/4/EA/BGSG8BFQIIUWWKM212Q9MK.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/4/EA/BGSG8BFQIIUWWKM212Q9MK.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/5/B6/HCD6J9TWHJ2HLAQKHGMN73.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/5/B6/HCD6J9TWHJ2HLAQKHGMN73.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/5/U1/E0ABGN3FJ2K6941DN7N9B5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/5/U1/E0ABGN3FJ2K6941DN7N9B5.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/6/7H/IIEU9RBT5DKUSB5NWGAXOC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/6/7H/IIEU9RBT5DKUSB5NWGAXOC.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/7/48/61MYLJIE844YCD0LGXNBCL.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/7/48/61MYLJIE844YCD0LGXNBCL.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/7/HO/F7600QWI0W9PYAAY67JSPK.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/7/HO/F7600QWI0W9PYAAY67JSPK.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/4F/OX64GDVKU7056P8UYB1YRW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/4F/OX64GDVKU7056P8UYB1YRW.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/7O/OM8IQHH7DKNOY23EGS227Q.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/8/7O/OM8IQHH7DKNOY23EGS227Q.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/2F/PRZ1IV964K2VOL8MRQ8WN0.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/2F/PRZ1IV964K2VOL8MRQ8WN0.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/BI/80LHDBIBD0IGZ8UY3LV989.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/BI/80LHDBIBD0IGZ8UY3LV989.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/6L/L2J24JTE17LRAS1XWAO3TA.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/6L/L2J24JTE17LRAS1XWAO3TA.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/CZ/BVNUHT9NP1MR4ZXIZ1HMPF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/CZ/BVNUHT9NP1MR4ZXIZ1HMPF.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/RE/5EX467L0712L7UEMA82Q8O.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/A/RE/5EX467L0712L7UEMA82Q8O.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/AO/6L9NUAYAWC811CWJOJV6OV.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/AO/6L9NUAYAWC811CWJOJV6OV.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/C/3D/63NK5PXKTK8GJY9YTRPJRP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/C/3D/63NK5PXKTK8GJY9YTRPJRP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/C/8F/HVX8Y20PT9GRZUBPSN0LR6.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/C/8F/HVX8Y20PT9GRZUBPSN0LR6.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/3O/MQWF4ZA3NTWHZRMKKQTJY8.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/3O/MQWF4ZA3NTWHZRMKKQTJY8.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/AH/0ZYEKIJYRZK2JANF6UFQY1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/AH/0ZYEKIJYRZK2JANF6UFQY1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/W9/UUTJD3Q5GM8BR95LM6NP3F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/D/W9/UUTJD3Q5GM8BR95LM6NP3F.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/M0/Z7VS552L8Y7WKQEFY0SEAY.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/E/M0/Z7VS552L8Y7WKQEFY0SEAY.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/Grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/Grid.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TileBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TileBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TileBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TileBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/MainGameUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/MainGameUI.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +55,12 @@
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/HealthBarWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/SpawnerManager.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/SpawnerManager.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SDINZ/TowerData.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SDINZ/TowerData.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/UI/MainGameUI.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/UI/MainGameUI.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -177,7 +210,7 @@
       <workItem from="1695203997530" duration="13350000" />
       <workItem from="1695400714673" duration="703000" />
       <workItem from="1700394249579" duration="86000" />
-      <workItem from="1700394377561" duration="6985000" />
+      <workItem from="1700394377561" duration="17242000" />
     </task>
     <servers />
   </component>

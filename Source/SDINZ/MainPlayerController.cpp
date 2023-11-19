@@ -7,6 +7,12 @@
 #include "Kismet/GameplayStatics.h"
 #include "Grid.h"
 #include "TowerBase.h"
+#include "TowerData.h"
+#include "Blueprint/UserWidget.h"
+#include "Components/HorizontalBox.h"
+#include "Components/TextBlock.h"
+#include "UI/MainGameUI.h"
+#include "UI/TowerWidget.h"
 
 void AMainPlayerController::PlayerTick(float DeltaTime)
 {
@@ -14,6 +20,12 @@ void AMainPlayerController::PlayerTick(float DeltaTime)
 
 	if(Grid)
 	{
+		if(Grid->bIsHoveringUI)
+		{
+			Grid->SetSelectedTile(-1, -1);
+			return;
+		}
+		
 		FHitResult HitResult;
 		
 		if(GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, HitResult))
@@ -50,6 +62,19 @@ void AMainPlayerController::BeginPlay()
 
 	Grid = Cast<AGrid>(UGameplayStatics::GetActorOfClass(GetWorld(), AGrid::StaticClass()));
 	bEnableMouseOverEvents = true;
+
+	if(MainUIClass)
+	{
+		MainUI = CreateWidget<UMainGameUI>(this, MainUIClass);
+		MainUI->AddToViewport();
+		for (auto Tower : AvailableTowers)
+		{
+			UTowerWidget* TowerWidget = CreateWidget<UTowerWidget>(this, TowerWidgetClass);
+			TowerWidget->TowerPropertiesWidget = Tower->TowerProperties;
+			TowerWidget->CostText->SetText(FText::AsNumber(TowerWidget->TowerPropertiesWidget.Cost));
+			MainUI->TowerHorizontalBox->AddChildToHorizontalBox(TowerWidget);
+		}
+	}
 }
 
 void AMainPlayerController::OnMousePress()
@@ -75,20 +100,22 @@ void AMainPlayerController::OnMousePress()
 		
 		if(bIsValid)
 		{
-			if(Tile->GetTower()) {return;}
-			
+			if(Tile->GetTower()) { return; }
+			if(!CurrentTower.TowerClass) { return; }
 			
 			bool bIsValid2;
 			FVector2D Location2D;
 			Grid->TileToGridLocation(Row, Column, true, bIsValid2, Location2D);
 
 			FActorSpawnParameters SpawnParameters;
-			ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(TowerClass, FVector(Location2D.X - 30, Location2D.Y, 80),
+			ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(CurrentTower.TowerClass, FVector(Location2D.X - 30, Location2D.Y, 80),
 				FRotator(0,270,30), SpawnParameters);
+			SpawnedTower->TowerProperties = CurrentTower;
 
-			if(SpawnedTower->TowerType != Tile->TileType && Tile->TileType != ETowerType::Both)
+			if(SpawnedTower->TowerProperties.TowerType != Tile->TileType && Tile->TileType != ETowerType::Both)
 			{
 				SpawnedTower->Destroy();
+				return;
 			}
 			Tile->SetTower(SpawnedTower);
 		}

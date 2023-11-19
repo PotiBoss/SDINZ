@@ -8,6 +8,8 @@
 #include "MainPlayerController.generated.h"
 
 class AGrid;
+class UMainGameUI;
+class UTowerData;
 
 /**
  * 
@@ -17,6 +19,7 @@ class SDINZ_API AMainPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 public:
+	UFUNCTION(BlueprintCallable)
 	AGrid* GetGrid() { return Grid; }
 
 	UPROPERTY()
@@ -37,9 +40,23 @@ protected:
 	UPROPERTY()
 	AGrid* Grid;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSubclassOf<ATowerBase> TowerClass;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	//TSubclassOf<ATowerBase> TowerClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<TSubclassOf<ATowerBase>> AvailableTowers;
+	FTowerProperties CurrentTower;
+
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	//TArray<TSubclassOf<ATowerBase>> AvailableTowers;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UTowerData*> AvailableTowers; 
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UUserWidget> MainUIClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UUserWidget> TowerWidgetClass;
+
+	UPROPERTY(BlueprintReadWrite)
+	UMainGameUI* MainUI;
 };

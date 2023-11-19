@@ -27,6 +27,9 @@ public:
 	UFUNCTION()
 	void SetSelectedTile(int Row, int Column);
 
+	UPROPERTY(BlueprintReadWrite)
+	bool bIsHoveringUI;
+
 	UProceduralMeshComponent* GetSelectionGridMeshComponent() { return ProceduralSelectionMeshComponent; }
 
 protected:

@@ -9,6 +9,25 @@
 
 class ATowerProjectile;
 enum ETowerType;
+
+USTRUCT(BlueprintType)
+struct FTowerProperties
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TEnumAsByte<ETowerType> TowerType = ETowerType::None;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 Cost;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UTexture2D* TextureUI;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TSubclassOf<ATowerBase> TowerClass;
+};
+
 UCLASS()
 class SDINZ_API ATowerBase : public APaperCharacter
 {
@@ -28,8 +47,14 @@ public:
 	TSubclassOf<ATowerProjectile> ProjectileClass;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	FTowerProperties TowerProperties;
+
+/*	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TEnumAsByte<ETowerType> TowerType = ETowerType::None;
-	
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 Cost;
+	*/
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
