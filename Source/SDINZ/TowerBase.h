@@ -4,9 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "PaperCharacter.h"
+#include "TileBase.h"
 #include "TowerBase.generated.h"
 
 class ATowerProjectile;
+enum ETowerType;
 UCLASS()
 class SDINZ_API ATowerBase : public APaperCharacter
 {
@@ -24,6 +26,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TSubclassOf<ATowerProjectile> ProjectileClass;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TEnumAsByte<ETowerType> TowerType = ETowerType::None;
 	
 protected:
 	// Called when the game starts or when spawned

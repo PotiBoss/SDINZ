@@ -29,7 +29,9 @@ void AEnemyGoal::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 	AEnemyBase* Enemy = Cast<AEnemyBase>(OtherActor);
 	if(Enemy)	
 	{
+
 		Enemy->Die();
+
 		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("EnemyGoal cpp enemy reached end"));
 	}
 }

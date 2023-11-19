@@ -59,14 +59,14 @@ void AMainPlayerController::OnMousePress()
 
 	ATileBase* Tile = Cast<ATileBase>(HitResult.GetActor());
 
-	if(Tile)
-	{
-		Tile->TileClicked();
-	}
+	if(!Tile) { return; }
+	
+	Tile->TileClicked();
+	
 
 	if(Grid->GetSelectionGridMeshComponent()->IsVisible())
 	{
-
+		
 		bool bIsValid;
 		int Row;
 		int Column;
@@ -75,13 +75,22 @@ void AMainPlayerController::OnMousePress()
 		
 		if(bIsValid)
 		{
+			if(Tile->GetTower()) {return;}
+			
+			
 			bool bIsValid2;
 			FVector2D Location2D;
 			Grid->TileToGridLocation(Row, Column, true, bIsValid2, Location2D);
 
 			FActorSpawnParameters SpawnParameters;
-			GetWorld()->SpawnActor<ATowerBase>(TowerClass, FVector(Location2D.X - 30, Location2D.Y, 80),
+			ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(TowerClass, FVector(Location2D.X - 30, Location2D.Y, 80),
 				FRotator(0,270,30), SpawnParameters);
+
+			if(SpawnedTower->TowerType != Tile->TileType && Tile->TileType != ETowerType::Both)
+			{
+				SpawnedTower->Destroy();
+			}
+			Tile->SetTower(SpawnedTower);
 		}
 	}
 }

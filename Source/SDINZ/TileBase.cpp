@@ -20,6 +20,16 @@ void ATileBase::BeginPlay()
 	
 }
 
+ATowerBase* ATileBase::GetTower() const
+{
+	return Tower;
+}
+
+void ATileBase::SetTower(ATowerBase* InTower)
+{
+	Tower = InTower;
+}
+
 void ATileBase::TileClicked()
 {
 	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("Clicked tile: %s"), *GetName()));
