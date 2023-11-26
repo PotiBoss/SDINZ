@@ -77,7 +77,11 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Constants")
 	FLinearColor LineColor;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Constants")
-	FLinearColor SelectionColor;
+	FLinearColor SelectionColorNothing;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Constants")
+	FLinearColor SelectionColorValid;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Constants")
+	FLinearColor SelectionColorInValid;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Constants")
 	float LineOpacity;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Constants")

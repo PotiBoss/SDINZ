@@ -26,7 +26,7 @@ void AGrid::BeginPlay()
 void AGrid::SpawnNewGrid()
 {
 	UMaterialInstanceDynamic* LinesMaterialInstance = CreateMaterialInstance(LineColor, LineOpacity);
-	UMaterialInstanceDynamic* SelectionMaterialInstance = CreateMaterialInstance(SelectionColor, SelectionOpacity);
+	UMaterialInstanceDynamic* SelectionMaterialInstance = CreateMaterialInstance(SelectionColorNothing, SelectionOpacity);
 
 	
 	TArray<FVector> LineVertices;
@@ -100,7 +100,35 @@ void AGrid::SetSelectedTile(int Row, int Column)
 	if(bIsValid)
 	{
 		ProceduralSelectionMeshComponent->SetVisibility(true);
-		ProceduralSelectionMeshComponent->SetWorldLocation(FVector(GridLocation.X, GridLocation.Y, GetActorLocation().Z));
+		ProceduralSelectionMeshComponent->SetWorldLocation(FVector(GridLocation.X, GridLocation.Y, GetActorLocation().Z));	
+		if(PC->CurrentTower.TowerClass)
+		{
+			FHitResult HitResult;
+			PC->GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
+
+			ATileBase* Tile = Cast<ATileBase>(HitResult.GetActor());
+
+			if(PC->PreviewTower)
+			{
+				PC->PreviewTower->SetActorLocationAndRotation(FVector(GridLocation.X + 20, GridLocation.Y + 50, 80), FRotator(0,270,30));
+			}
+			
+			if(Tile && PC->CurrentTower.TowerType == Tile->TileType)
+			{
+				UMaterialInstanceDynamic* SelectionMaterialInstance = CreateMaterialInstance(SelectionColorValid, SelectionOpacity);
+				ProceduralSelectionMeshComponent->SetMaterial(0, SelectionMaterialInstance);
+			}
+			else
+			{
+				UMaterialInstanceDynamic* SelectionMaterialInstance = CreateMaterialInstance(SelectionColorInValid, SelectionOpacity);
+				ProceduralSelectionMeshComponent->SetMaterial(0, SelectionMaterialInstance);
+			}
+		}
+		else
+		{
+			UMaterialInstanceDynamic* SelectionMaterialInstance = CreateMaterialInstance(SelectionColorNothing, SelectionOpacity);
+			ProceduralSelectionMeshComponent->SetMaterial(0, SelectionMaterialInstance);
+		}
 	}
 	else
 	{

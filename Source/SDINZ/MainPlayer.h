@@ -6,6 +6,8 @@
 #include "GameFramework/Pawn.h"
 #include "MainPlayer.generated.h"
 
+class UTowerDetailsWidget;
+
 UCLASS()
 class SDINZ_API AMainPlayer : public APawn
 {
@@ -17,11 +19,38 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	USceneComponent* SceneRoot;
 
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* CameraComponent;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	class USplineComponent* SplineComponent;
+	
+	UPROPERTY(EditAnywhere, Category = "Spline")
+	float Speed;
+	UPROPERTY()
+	bool bShouldCameraMove;
+	UPROPERTY()
+	bool bWhichWay;
+	
+	UFUNCTION(BlueprintCallable)
+	void SetCameraUI();
+	
+	UFUNCTION(BlueprintCallable)
+	void SetCameraGameplay();
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UUserWidget> DetailsWidgetClass;
+
+	UPROPERTY(BlueprintReadWrite)
+	UTowerDetailsWidget* DetailsWidget;
+	
+	
 };

@@ -10,6 +10,7 @@
 class AGrid;
 class UMainGameUI;
 class UTowerData;
+class AMainPlayer;
 
 /**
  * 
@@ -24,6 +25,15 @@ public:
 
 	UPROPERTY()
 	FVector CurrentTileLocation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FTowerProperties CurrentTower;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ATowerBase* PreviewTower;
+	
+	UPROPERTY(BlueprintReadWrite)
+	AMainPlayer* MainPlayer;
 	
 protected:
 	virtual void PlayerTick(float DeltaTime) override;
@@ -42,9 +52,6 @@ protected:
 
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	//TSubclassOf<ATowerBase> TowerClass;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FTowerProperties CurrentTower;
 
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	//TArray<TSubclassOf<ATowerBase>> AvailableTowers;

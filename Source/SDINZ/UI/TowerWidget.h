@@ -14,6 +14,9 @@ class SDINZ_API UTowerWidget : public UUserWidget
 {
 	GENERATED_BODY()
 public:
+	UFUNCTION(BlueprintCallable)
+	void CreateTower();
+	
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	FTowerProperties TowerPropertiesWidget;
 	

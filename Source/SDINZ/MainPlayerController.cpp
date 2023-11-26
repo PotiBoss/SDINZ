@@ -6,6 +6,7 @@
 #include "TileBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Grid.h"
+#include "MainPlayer.h"
 #include "TowerBase.h"
 #include "TowerData.h"
 #include "Blueprint/UserWidget.h"
@@ -44,6 +45,14 @@ void AMainPlayerController::PlayerTick(float DeltaTime)
 		}
 	}
 
+	/*if(PreviewTower)
+	{
+		FVector Location;
+		FRotator Rotation;
+		
+		PreviewTower->SetActorLocationAndRotation(Location, Rotation, false);
+	}
+	*/
 }
 
 void AMainPlayerController::SetupInputComponent()
@@ -62,6 +71,8 @@ void AMainPlayerController::BeginPlay()
 
 	Grid = Cast<AGrid>(UGameplayStatics::GetActorOfClass(GetWorld(), AGrid::StaticClass()));
 	bEnableMouseOverEvents = true;
+
+	MainPlayer = Cast<AMainPlayer>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
 
 	if(MainUIClass)
 	{
@@ -117,6 +128,15 @@ void AMainPlayerController::OnMousePress()
 				SpawnedTower->Destroy();
 				return;
 			}
+			if(PreviewTower)
+			{
+				PreviewTower->Destroy();
+				PreviewTower = nullptr;
+			}
+
+			MainPlayer->SetCameraGameplay();
+			
+			CurrentTower.TowerClass = nullptr; //
 			Tile->SetTower(SpawnedTower);
 		}
 	}
