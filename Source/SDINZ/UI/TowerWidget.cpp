@@ -19,6 +19,9 @@ void UTowerWidget::CreateTower()
 
 	PC->CurrentTower = TowerPropertiesWidget;
 	PC->MainPlayer->SetCameraUI();
+
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), PC->CurrentTower.Damage));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%d"), TowerPropertiesWidget.Damage));
 	
 	FActorSpawnParameters SpawnParameters;
 	ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(TowerPropertiesWidget.TowerClass, FVector(0, 0, 0),

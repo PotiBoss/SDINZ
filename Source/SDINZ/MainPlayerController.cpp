@@ -84,6 +84,9 @@ void AMainPlayerController::BeginPlay()
 			TowerWidget->TowerPropertiesWidget = Tower->TowerProperties;
 			TowerWidget->CostText->SetText(FText::AsNumber(TowerWidget->TowerPropertiesWidget.Cost));
 			MainUI->TowerHorizontalBox->AddChildToHorizontalBox(TowerWidget);
+
+			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Black, FString::Printf(TEXT("%d"), TowerWidget->TowerPropertiesWidget.Damage));
+			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Blue, FString::Printf(TEXT("%d"), Tower->TowerProperties.Damage));
 		}
 	}
 }

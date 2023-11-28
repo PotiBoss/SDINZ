@@ -26,6 +26,21 @@ struct FTowerProperties
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TSubclassOf<ATowerBase> TowerClass;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UTexture2D* DetailsSplash;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	FText TowerName;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 Damage;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 Range;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 Health;
 };
 
 UCLASS()
@@ -49,12 +64,6 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FTowerProperties TowerProperties;
 
-/*	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TEnumAsByte<ETowerType> TowerType = ETowerType::None;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int32 Cost;
-	*/
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

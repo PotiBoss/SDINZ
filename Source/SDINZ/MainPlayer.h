@@ -6,7 +6,9 @@
 #include "GameFramework/Pawn.h"
 #include "MainPlayer.generated.h"
 
+struct FTowerProperties;
 class UTowerDetailsWidget;
+class AMainPlayerController;
 
 UCLASS()
 class SDINZ_API AMainPlayer : public APawn
@@ -36,7 +38,7 @@ public:
 	UPROPERTY()
 	bool bWhichWay;
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION()
 	void SetCameraUI();
 	
 	UFUNCTION(BlueprintCallable)
@@ -51,6 +53,9 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite)
 	UTowerDetailsWidget* DetailsWidget;
+
+	UPROPERTY()
+	AMainPlayerController* PC;
 	
 	
 };

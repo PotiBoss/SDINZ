@@ -7,20 +7,12 @@
   <component name="ChangeListManager">
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Tiles/BP_Grid.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Tiles/BP_Grid.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_TowerWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_TowerWidget.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/7J/G4POL81629UPZZYJCNNOBX.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/0/7J/G4POL81629UPZZYJCNNOBX.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/JL/CE5RJ1Z396WNMDVGIX5A0R.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/9/JL/CE5RJ1Z396WNMDVGIX5A0R.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/Grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/Grid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BP_TowerArcher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BP_TowerArcher.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Swordsman/BP_TowerSwordsman.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Swordsman/BP_TowerSwordsman.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.h" afterDir="false" />
     </list>
@@ -30,6 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/SDINZ/MainPlayer.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/HealthBarWidget.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/HealthBarWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/SpawnerManager.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -52,17 +45,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.SDINZ">
     <configuration name="SDINZ" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -196,7 +189,9 @@
       <workItem from="1700596561325" duration="4000" />
       <workItem from="1700913318487" duration="12336000" />
       <workItem from="1700961790988" duration="308000" />
-      <workItem from="1701002612624" duration="8480000" />
+      <workItem from="1701002612624" duration="14006000" />
+      <workItem from="1701037074524" duration="2121000" />
+      <workItem from="1701193747130" duration="5594000" />
     </task>
     <servers />
   </component>
@@ -218,5 +213,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CppProject">
+        <watch expression="@ ALREADY PREPROCESSED @DetailsWidget-&gt;TowerNameText" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

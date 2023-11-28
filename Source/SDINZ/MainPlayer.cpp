@@ -3,9 +3,14 @@
 
 #include "MainPlayer.h"
 
+#include "MainPlayerController.h"
+#include "TowerBase.h"
 #include "Blueprint/UserWidget.h"
 #include "Camera/CameraComponent.h"
+#include "Components/Image.h"
 #include "Components/SplineComponent.h"
+#include "Components/TextBlock.h"
+#include "Kismet/GameplayStatics.h"
 #include "UI/TowerDetailsWidget.h"
 
 // Sets default values
@@ -29,6 +34,20 @@ void AMainPlayer::SetCameraUI()
 	{
 		DetailsWidget = CreateWidget<UTowerDetailsWidget>(GetLocalViewingPlayerController(), DetailsWidgetClass);
 		DetailsWidget->AddToViewport();
+
+		if(PC)
+		{
+			if(!PC->CurrentTower.TextureUI){return;}
+			
+			DetailsWidget->TowerSplash->SetBrushFromTexture(PC->CurrentTower.DetailsSplash);
+			DetailsWidget->TowerClass->SetBrushFromTexture(PC->CurrentTower.TextureUI);
+			DetailsWidget->TowerNameText->SetText(PC->CurrentTower.TowerName);
+			DetailsWidget->TowerHealthText->SetText(FText::AsNumber(PC->CurrentTower.Health));
+			DetailsWidget->TowerAttackText->SetText(FText::AsNumber(PC->CurrentTower.Damage));
+			DetailsWidget->TowerRangeText->SetText(FText::AsNumber(PC->CurrentTower.Range));
+
+			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), PC->CurrentTower.Damage));
+		}
 	}
 }
 
@@ -49,7 +68,8 @@ void AMainPlayer::SetCameraGameplay()
 void AMainPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	PC = Cast<AMainPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
 }
 
 // Called every frame

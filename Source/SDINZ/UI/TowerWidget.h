@@ -17,7 +17,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void CreateTower();
 	
-	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UPROPERTY(BlueprintReadWrite)
 	FTowerProperties TowerPropertiesWidget;
 	
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
