@@ -18,7 +18,7 @@ public:
 	void CreateTower();
 	
 	UPROPERTY(BlueprintReadWrite)
-	FTowerProperties TowerPropertiesWidget;
+	UTowerData* TowerPropertiesWidget;
 	
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UTextBlock* CostText;

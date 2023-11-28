@@ -4,6 +4,7 @@
 #include "Grid.h"
 
 #include "MainPlayerController.h"
+#include "TowerData.h"
 
 // Sets default values
 AGrid::AGrid()
@@ -101,7 +102,7 @@ void AGrid::SetSelectedTile(int Row, int Column)
 	{
 		ProceduralSelectionMeshComponent->SetVisibility(true);
 		ProceduralSelectionMeshComponent->SetWorldLocation(FVector(GridLocation.X, GridLocation.Y, GetActorLocation().Z));	
-		if(PC->CurrentTower.TowerClass)
+		if(PC->CurrentTower) // ->TowerProperties.TowerClass
 		{
 			FHitResult HitResult;
 			PC->GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
@@ -113,7 +114,7 @@ void AGrid::SetSelectedTile(int Row, int Column)
 				PC->PreviewTower->SetActorLocationAndRotation(FVector(GridLocation.X + 20, GridLocation.Y + 50, 80), FRotator(0,270,30));
 			}
 			
-			if(Tile && PC->CurrentTower.TowerType == Tile->TileType)
+			if(Tile && PC->CurrentTower->TowerProperties.TowerType == Tile->TileType)
 			{
 				UMaterialInstanceDynamic* SelectionMaterialInstance = CreateMaterialInstance(SelectionColorValid, SelectionOpacity);
 				ProceduralSelectionMeshComponent->SetMaterial(0, SelectionMaterialInstance);

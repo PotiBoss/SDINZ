@@ -5,6 +5,7 @@
 
 #include "MainPlayerController.h"
 #include "TowerBase.h"
+#include "TowerData.h"
 #include "Blueprint/UserWidget.h"
 #include "Camera/CameraComponent.h"
 #include "Components/Image.h"
@@ -37,16 +38,16 @@ void AMainPlayer::SetCameraUI()
 
 		if(PC)
 		{
-			if(!PC->CurrentTower.TextureUI){return;}
+			if(!PC->CurrentTower->TowerProperties.TextureUI){return;}
 			
-			DetailsWidget->TowerSplash->SetBrushFromTexture(PC->CurrentTower.DetailsSplash);
-			DetailsWidget->TowerClass->SetBrushFromTexture(PC->CurrentTower.TextureUI);
-			DetailsWidget->TowerNameText->SetText(PC->CurrentTower.TowerName);
-			DetailsWidget->TowerHealthText->SetText(FText::AsNumber(PC->CurrentTower.Health));
-			DetailsWidget->TowerAttackText->SetText(FText::AsNumber(PC->CurrentTower.Damage));
-			DetailsWidget->TowerRangeText->SetText(FText::AsNumber(PC->CurrentTower.Range));
+			DetailsWidget->TowerSplash->SetBrushFromTexture(PC->CurrentTower->TowerProperties.DetailsSplash);
+			DetailsWidget->TowerClass->SetBrushFromTexture(PC->CurrentTower->TowerProperties.TextureUI);
+			DetailsWidget->TowerNameText->SetText(PC->CurrentTower->TowerProperties.TowerName);
+			DetailsWidget->TowerHealthText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Health));
+			DetailsWidget->TowerAttackText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Damage));
+			DetailsWidget->TowerRangeText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Range));
 
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), PC->CurrentTower.Damage));
+			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), PC->CurrentTower->TowerProperties.Damage));
 		}
 	}
 }

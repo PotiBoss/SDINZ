@@ -27,7 +27,7 @@ public:
 	FVector CurrentTileLocation;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FTowerProperties CurrentTower;
+	UTowerData* CurrentTower;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ATowerBase* PreviewTower;

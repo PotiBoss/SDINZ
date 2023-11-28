@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "SDINZ/MainPlayer.h"
 #include "SDINZ/MainPlayerController.h"
+#include "SDINZ/TowerData.h"
 
 void UTowerWidget::CreateTower()
 {
@@ -24,7 +25,7 @@ void UTowerWidget::CreateTower()
 	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%d"), TowerPropertiesWidget.Damage));
 	
 	FActorSpawnParameters SpawnParameters;
-	ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(TowerPropertiesWidget.TowerClass, FVector(0, 0, 0),
+	ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(TowerPropertiesWidget->TowerProperties.TowerClass, FVector(0, 0, 0),
 		FRotator(0,0,0), SpawnParameters);
 	PC->PreviewTower = SpawnedTower;
 }

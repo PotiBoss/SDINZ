@@ -7,6 +7,7 @@
 #include "TileBase.h"
 #include "TowerBase.generated.h"
 
+class UTowerData;
 class ATowerProjectile;
 enum ETowerType;
 
@@ -62,7 +63,7 @@ public:
 	TSubclassOf<ATowerProjectile> ProjectileClass;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	FTowerProperties TowerProperties;
+	UTowerData* TowerProperties;
 
 protected:
 	// Called when the game starts or when spawned

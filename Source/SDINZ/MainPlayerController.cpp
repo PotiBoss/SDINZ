@@ -81,11 +81,11 @@ void AMainPlayerController::BeginPlay()
 		for (auto Tower : AvailableTowers)
 		{
 			UTowerWidget* TowerWidget = CreateWidget<UTowerWidget>(this, TowerWidgetClass);
-			TowerWidget->TowerPropertiesWidget = Tower->TowerProperties;
-			TowerWidget->CostText->SetText(FText::AsNumber(TowerWidget->TowerPropertiesWidget.Cost));
+			TowerWidget->TowerPropertiesWidget = Tower;
+			TowerWidget->CostText->SetText(FText::AsNumber(TowerWidget->TowerPropertiesWidget->TowerProperties.Cost));
 			MainUI->TowerHorizontalBox->AddChildToHorizontalBox(TowerWidget);
 
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Black, FString::Printf(TEXT("%d"), TowerWidget->TowerPropertiesWidget.Damage));
+			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Black, FString::Printf(TEXT("%d"), TowerWidget->TowerPropertiesWidget->TowerProperties.Damage));
 			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Blue, FString::Printf(TEXT("%d"), Tower->TowerProperties.Damage));
 		}
 	}
@@ -115,18 +115,18 @@ void AMainPlayerController::OnMousePress()
 		if(bIsValid)
 		{
 			if(Tile->GetTower()) { return; }
-			if(!CurrentTower.TowerClass) { return; }
+			if(!CurrentTower) { return; }
 			
 			bool bIsValid2;
 			FVector2D Location2D;
 			Grid->TileToGridLocation(Row, Column, true, bIsValid2, Location2D);
 
 			FActorSpawnParameters SpawnParameters;
-			ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(CurrentTower.TowerClass, FVector(Location2D.X - 30, Location2D.Y, 80),
+			ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(CurrentTower->TowerProperties.TowerClass, FVector(Location2D.X - 30, Location2D.Y, 80),
 				FRotator(0,270,30), SpawnParameters);
 			SpawnedTower->TowerProperties = CurrentTower;
 
-			if(SpawnedTower->TowerProperties.TowerType != Tile->TileType && Tile->TileType != ETowerType::Both)
+			if(SpawnedTower->TowerProperties->TowerProperties.TowerType != Tile->TileType && Tile->TileType != ETowerType::Both)
 			{
 				SpawnedTower->Destroy();
 				return;
@@ -139,7 +139,7 @@ void AMainPlayerController::OnMousePress()
 
 			MainPlayer->SetCameraGameplay();
 			
-			CurrentTower.TowerClass = nullptr; //
+			CurrentTower = nullptr;
 			Tile->SetTower(SpawnedTower);
 		}
 	}

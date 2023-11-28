@@ -7,11 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BP_TowerArcher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/BP_TowerArcher.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Swordsman/BP_TowerSwordsman.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Swordsman/BP_TowerSwordsman.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.h" afterDir="false" />
@@ -191,7 +190,7 @@
       <workItem from="1700961790988" duration="308000" />
       <workItem from="1701002612624" duration="14006000" />
       <workItem from="1701037074524" duration="2121000" />
-      <workItem from="1701193747130" duration="5594000" />
+      <workItem from="1701193747130" duration="6387000" />
     </task>
     <servers />
   </component>
