@@ -73,7 +73,10 @@ void AEnemyBase::Die()
 {
 	for (auto TowerController : TowerControllers)
 	{
-		TowerController->EnemiesInRange.Remove(this);
+		if(TowerController)
+		{
+			TowerController->EnemiesInRange.Remove(this);
+		}
 	}
 	Destroy();
 }

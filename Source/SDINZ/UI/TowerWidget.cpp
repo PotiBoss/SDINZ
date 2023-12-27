@@ -3,6 +3,8 @@
 
 #include "TowerWidget.h"
 
+#include "Components/Image.h"
+#include "Components/TextBlock.h"
 #include "Kismet/GameplayStatics.h"
 #include "SDINZ/MainPlayer.h"
 #include "SDINZ/MainPlayerController.h"
@@ -12,6 +14,7 @@ void UTowerWidget::CreateTower()
 {
 	AMainPlayerController* PC = Cast<AMainPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
 	if(!PC) {return;}
+	if(TowerPropertiesWidget->TowerProperties.Cost > PC->Energy){return;}
 	if(PC->PreviewTower)
 	{
 		PC->PreviewTower->Destroy();
@@ -20,12 +23,16 @@ void UTowerWidget::CreateTower()
 
 	PC->CurrentTower = TowerPropertiesWidget;
 	PC->MainPlayer->SetCameraUI();
-
-	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), PC->CurrentTower.Damage));
-	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, FString::Printf(TEXT("%d"), TowerPropertiesWidget.Damage));
 	
 	FActorSpawnParameters SpawnParameters;
 	ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(TowerPropertiesWidget->TowerProperties.TowerClass, FVector(0, 0, 0),
 		FRotator(0,0,0), SpawnParameters);
 	PC->PreviewTower = SpawnedTower;
+}
+
+void UTowerWidget::SetVars(UTowerData* Tower)
+{
+	TowerPropertiesWidget = Tower;
+	CostText->SetText(FText::AsNumber(TowerPropertiesWidget->TowerProperties.Cost));
+	ClassImage->SetBrushFromTexture(Tower->TowerProperties.TextureUI);
 }

@@ -27,6 +27,9 @@ public:
 	UTextBlock* TowerRangeText;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UTextBlock* TowerAttackSpeedText;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UImage* TowerSplash;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))

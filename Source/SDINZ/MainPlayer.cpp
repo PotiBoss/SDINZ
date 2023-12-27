@@ -28,14 +28,24 @@ AMainPlayer::AMainPlayer()
 
 void AMainPlayer::SetCameraUI()
 {
+	if(bWhichWay == false)
+	{
+		const float CurrentTimeDilation = UGameplayStatics::GetGlobalTimeDilation(GetWorld());
+		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), CurrentTimeDilation * 0.5);
+	}
+	
+	
 	bShouldCameraMove = true;
 	bWhichWay = true;
 
 	if(DetailsWidgetClass)
 	{
-		DetailsWidget = CreateWidget<UTowerDetailsWidget>(GetLocalViewingPlayerController(), DetailsWidgetClass);
-		DetailsWidget->AddToViewport();
-
+		if(!DetailsWidget)
+		{
+			DetailsWidget = CreateWidget<UTowerDetailsWidget>(GetLocalViewingPlayerController(), DetailsWidgetClass);
+			DetailsWidget->AddToViewport();
+		}
+		
 		if(PC)
 		{
 			if(!PC->CurrentTower->TowerProperties.TextureUI){return;}
@@ -46,14 +56,19 @@ void AMainPlayer::SetCameraUI()
 			DetailsWidget->TowerHealthText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Health));
 			DetailsWidget->TowerAttackText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Damage));
 			DetailsWidget->TowerRangeText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Range));
-
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, FString::Printf(TEXT("%d"), PC->CurrentTower->TowerProperties.Damage));
+			DetailsWidget->TowerAttackSpeedText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.AttackSpeed));
 		}
 	}
 }
 
 void AMainPlayer::SetCameraGameplay()
 {
+	if(bWhichWay == true)
+	{
+		const float CurrentTimeDilation = UGameplayStatics::GetGlobalTimeDilation(GetWorld());
+		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), CurrentTimeDilation * 2);
+	}
+	
 	bShouldCameraMove = true;
 	bWhichWay = false;
 	
@@ -83,19 +98,19 @@ void AMainPlayer::Tick(float DeltaTime)
 		if(bWhichWay)
 		{
 			CameraComponent->OrthoWidth += Speed * DeltaTime;
-			if(CameraComponent->OrthoWidth >= 3072.0f)
+			if(CameraComponent->OrthoWidth >= 2500.0f)
 			{
 				bShouldCameraMove = false;
-				CameraComponent->OrthoWidth = 3072.0f;
+				CameraComponent->OrthoWidth = 2500.0f;
 			}
 		}
 		else
 		{
 			CameraComponent->OrthoWidth -= Speed * DeltaTime;
-			if(CameraComponent->OrthoWidth <= 2048.0f)
+			if(CameraComponent->OrthoWidth <= 1900.0f)
 			{
 				bShouldCameraMove = false;
-				CameraComponent->OrthoWidth = 2048.0f;
+				CameraComponent->OrthoWidth = 1900.0f;
 			}
 		}
 	}

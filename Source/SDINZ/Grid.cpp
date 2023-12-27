@@ -102,7 +102,7 @@ void AGrid::SetSelectedTile(int Row, int Column)
 	{
 		ProceduralSelectionMeshComponent->SetVisibility(true);
 		ProceduralSelectionMeshComponent->SetWorldLocation(FVector(GridLocation.X, GridLocation.Y, GetActorLocation().Z));	
-		if(PC->CurrentTower) // ->TowerProperties.TowerClass
+		if(PC->CurrentTower)
 		{
 			FHitResult HitResult;
 			PC->GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
@@ -134,6 +134,10 @@ void AGrid::SetSelectedTile(int Row, int Column)
 	else
 	{
 		ProceduralSelectionMeshComponent->SetVisibility(false);
+		if(PC->PreviewTower)
+		{
+			PC->PreviewTower->SetActorLocationAndRotation(FVector(0,0,0), FRotator(0,0,0));
+		}
 	}
 
 	PC->CurrentTileLocation = ProceduralSelectionMeshComponent->GetComponentLocation();

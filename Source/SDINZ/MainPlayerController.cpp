@@ -7,10 +7,13 @@
 #include "Kismet/GameplayStatics.h"
 #include "Grid.h"
 #include "MainPlayer.h"
+#include "MyGameInstance.h"
 #include "TowerBase.h"
 #include "TowerData.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/HorizontalBox.h"
+#include "Components/Image.h"
+#include "Components/ProgressBar.h"
 #include "Components/TextBlock.h"
 #include "UI/MainGameUI.h"
 #include "UI/TowerWidget.h"
@@ -18,6 +21,21 @@
 void AMainPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);
+
+	Energy += EnergyGain * DeltaTime;
+	MainUI->EnergyBar->SetPercent(Energy - FMath::FloorToInt(Energy));
+
+	for(auto TowerWidget : TowerWidgets)
+	{
+		if(TowerWidget->TowerPropertiesWidget->TowerProperties.Cost > Energy)
+		{
+			TowerWidget->CanvasPanel->SetRenderOpacity(0.3f);
+		}
+		else
+		{
+			TowerWidget->CanvasPanel->SetRenderOpacity(1.f);
+		}
+	}
 
 	if(Grid)
 	{
@@ -44,15 +62,6 @@ void AMainPlayerController::PlayerTick(float DeltaTime)
 			Grid->SetSelectedTile(-1, -1);
 		}
 	}
-
-	/*if(PreviewTower)
-	{
-		FVector Location;
-		FRotator Rotation;
-		
-		PreviewTower->SetActorLocationAndRotation(Location, Rotation, false);
-	}
-	*/
 }
 
 void AMainPlayerController::SetupInputComponent()
@@ -74,6 +83,8 @@ void AMainPlayerController::BeginPlay()
 
 	MainPlayer = Cast<AMainPlayer>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
 
+	AvailableTowers = Cast<UMyGameInstance>(GetWorld()->GetGameInstance())->ChosenTowers;
+
 	if(MainUIClass)
 	{
 		MainUI = CreateWidget<UMainGameUI>(this, MainUIClass);
@@ -81,18 +92,18 @@ void AMainPlayerController::BeginPlay()
 		for (auto Tower : AvailableTowers)
 		{
 			UTowerWidget* TowerWidget = CreateWidget<UTowerWidget>(this, TowerWidgetClass);
-			TowerWidget->TowerPropertiesWidget = Tower;
-			TowerWidget->CostText->SetText(FText::AsNumber(TowerWidget->TowerPropertiesWidget->TowerProperties.Cost));
+			TowerWidget->SetVars(Tower);
 			MainUI->TowerHorizontalBox->AddChildToHorizontalBox(TowerWidget);
 
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Black, FString::Printf(TEXT("%d"), TowerWidget->TowerPropertiesWidget->TowerProperties.Damage));
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Blue, FString::Printf(TEXT("%d"), Tower->TowerProperties.Damage));
+			TowerWidgets.Add(TowerWidget);
 		}
 	}
 }
 
 void AMainPlayerController::OnMousePress()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Orange, FString::Printf(TEXT("%f"), Energy));
+	
 	FHitResult HitResult;
 	GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
 
@@ -138,9 +149,12 @@ void AMainPlayerController::OnMousePress()
 			}
 
 			MainPlayer->SetCameraGameplay();
+
+
 			
 			CurrentTower = nullptr;
 			Tile->SetTower(SpawnedTower);
+			Energy -= SpawnedTower->TowerProperties->TowerProperties.Cost;
 		}
 	}
 }

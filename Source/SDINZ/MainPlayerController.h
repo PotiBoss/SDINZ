@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "TowerBase.h"
 #include "GameFramework/PlayerController.h"
+#include "UI/TowerWidget.h"
 #include "MainPlayerController.generated.h"
 
 class AGrid;
@@ -34,6 +35,12 @@ public:
 	
 	UPROPERTY(BlueprintReadWrite)
 	AMainPlayer* MainPlayer;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float Energy = 5.0f;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float EnergyGain = 1.f;
 	
 protected:
 	virtual void PlayerTick(float DeltaTime) override;
@@ -50,13 +57,11 @@ protected:
 	UPROPERTY()
 	AGrid* Grid;
 
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	//TSubclassOf<ATowerBase> TowerClass;
-
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	//TArray<TSubclassOf<ATowerBase>> AvailableTowers;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<UTowerData*> AvailableTowers; 
+	TArray<UTowerData*> AvailableTowers;
+
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite)
+	TArray<UTowerWidget*> TowerWidgets; 
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<UUserWidget> MainUIClass;

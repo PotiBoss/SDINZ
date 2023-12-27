@@ -42,6 +42,9 @@ struct FTowerProperties
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int32 Health;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float AttackSpeed;
 };
 
 UCLASS()

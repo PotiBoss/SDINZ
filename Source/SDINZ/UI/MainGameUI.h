@@ -8,6 +8,7 @@
 
 
 class UHorizontalBox;
+class UProgressBar;
 /**
  * 
  */
@@ -18,4 +19,7 @@ class SDINZ_API UMainGameUI : public UUserWidget
 public:
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UHorizontalBox* TowerHorizontalBox;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UProgressBar* EnergyBar;
 };
