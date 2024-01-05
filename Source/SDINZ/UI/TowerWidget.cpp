@@ -33,6 +33,18 @@ void UTowerWidget::CreateTower()
 
 void UTowerWidget::SetVars(UTowerData* Tower)
 {
+	if(!Tower)
+	{
+		CostText->SetVisibility(ESlateVisibility::Collapsed);
+		ClassImage->SetVisibility(ESlateVisibility::Collapsed);
+		ClassButton->SetVisibility(ESlateVisibility::Collapsed);
+		TowerPropertiesWidget = nullptr;
+		return;
+	}
+	CostText->SetVisibility(ESlateVisibility::Visible);
+	ClassImage->SetVisibility(ESlateVisibility::Visible);
+	ClassButton->SetVisibility(ESlateVisibility::Visible);
+	
 	TowerPropertiesWidget = Tower;
 	CostText->SetText(FText::AsNumber(TowerPropertiesWidget->TowerProperties.Cost));
 	ClassImage->SetBrushFromTexture(Tower->TowerProperties.TextureUI);
@@ -42,8 +54,11 @@ void UTowerWidget::SetVars(UTowerData* Tower)
 
 	FButtonStyle ButtonStyle;
 	ButtonStyle.Normal = ImageBrush;
+	ButtonStyle.Normal.TintColor = FSlateColor(FLinearColor(1.0f, 1.0f, 1.0f, 1.0f));
 	ButtonStyle.Hovered = ImageBrush;
+	ButtonStyle.Hovered.TintColor = FSlateColor(FLinearColor(1.0f, 1.0f, 1.0f, 0.4f));
 	ButtonStyle.Pressed = ImageBrush;
+	ButtonStyle.Pressed.TintColor = FSlateColor(FLinearColor(1.0f, 1.0f, 1.0f, 0.2f));
 	
 	ClassButton->SetStyle(ButtonStyle);
 }
