@@ -42,6 +42,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float EnergyGain = 1.f;
 	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int Health = 10;
+	
 protected:
 	virtual void PlayerTick(float DeltaTime) override;
 	virtual void SetupInputComponent() override;

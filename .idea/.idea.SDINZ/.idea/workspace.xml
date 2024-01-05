@@ -8,26 +8,12 @@
     <list default="true" id="18be3bc6-5eb6-4661-98b6-89acbb956097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDINZ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Enemies/BP_MeleeEnemyTest.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Enemies/BP_MeleeEnemyTest.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/MainPlayer/BP_MainPlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/ArcherData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Archer/ArcherData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Towers/Swordsman/SwordsmanData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Towers/Swordsman/SwordsmanData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/TopDown/Characters/RedTest/PaperChar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TopDown/Characters/RedTest/PaperChar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_MainGameUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_MainGameUI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_TowerDetailsWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_TowerDetailsWidget.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_Level.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_Level.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_LevelDetails.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_LevelDetails.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_Menu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_Menu.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/UI/WBP_TowerWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_TowerWidget.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/51/RYXJSZ7WPGA452Z9W871Q5.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/FW/9RP3XVMKOR12OZ2KSE0ZYU.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Blueprints/TopDown/Maps/FantasyLevel/B/FW/9RP3XVMKOR12OZ2KSE0ZYU.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/EnemyBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/EnemyBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/HealthBarWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/HealthBarWidget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/MainPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/TowerBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/MainGameUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/MainGameUI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/TowerDetailsWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/TowerDetailsWidget.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SDINZ/UI/TowerWidget.h" afterDir="false" />
     </list>
@@ -37,7 +23,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/SDINZ/MainPlayer.gen.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/HealthBarWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/LevelDetailsWidget.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SDINZ/LevelDetailsWidget.h" root0="FORCE_HIGHLIGHTING" />
@@ -229,7 +214,10 @@
       <workItem from="1703530952304" duration="833000" />
       <workItem from="1703632696750" duration="4305000" />
       <workItem from="1703701503197" duration="1794000" />
-      <workItem from="1703705264999" duration="3721000" />
+      <workItem from="1703705264999" duration="7942000" />
+      <workItem from="1704458922420" duration="1872000" />
+      <workItem from="1704461323233" duration="2079000" />
+      <workItem from="1704463494160" duration="594000" />
     </task>
     <servers />
   </component>

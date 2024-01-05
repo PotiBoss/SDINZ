@@ -14,7 +14,6 @@
 #include "Components/HorizontalBox.h"
 #include "Components/Image.h"
 #include "Components/ProgressBar.h"
-#include "Components/TextBlock.h"
 #include "UI/MainGameUI.h"
 #include "UI/TowerWidget.h"
 
@@ -102,8 +101,6 @@ void AMainPlayerController::BeginPlay()
 
 void AMainPlayerController::OnMousePress()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Orange, FString::Printf(TEXT("%f"), Energy));
-	
 	FHitResult HitResult;
 	GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
 

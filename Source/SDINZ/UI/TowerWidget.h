@@ -8,6 +8,7 @@
 #include "SDINZ/TowerBase.h"
 #include "TowerWidget.generated.h"
 
+class UButton;
 class UImage;
 class UTextBlock;
 class UCanvasPanel;
@@ -31,6 +32,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UImage* ClassImage;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UButton* ClassButton;
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UCanvasPanel* CanvasPanel;

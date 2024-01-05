@@ -9,6 +9,6 @@ public class SDINZ : ModuleRules
 		PrivateDependencyModuleNames.AddRange(new string[] { "ProceduralMeshComponent" });
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "NavigationSystem", "AIModule", "Niagara", "GameplayTasks" });
+        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "NavigationSystem", "AIModule", "Niagara", "GameplayTasks", "SlateCore" });
     }
 }

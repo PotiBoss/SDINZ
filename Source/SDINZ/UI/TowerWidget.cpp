@@ -3,6 +3,7 @@
 
 #include "TowerWidget.h"
 
+#include "Components/Button.h"
 #include "Components/Image.h"
 #include "Components/TextBlock.h"
 #include "Kismet/GameplayStatics.h"
@@ -35,4 +36,14 @@ void UTowerWidget::SetVars(UTowerData* Tower)
 	TowerPropertiesWidget = Tower;
 	CostText->SetText(FText::AsNumber(TowerPropertiesWidget->TowerProperties.Cost));
 	ClassImage->SetBrushFromTexture(Tower->TowerProperties.TextureUI);
+	
+	FSlateBrush ImageBrush;
+	ImageBrush.SetResourceObject(TowerPropertiesWidget->TowerProperties.DetailsSplash);
+
+	FButtonStyle ButtonStyle;
+	ButtonStyle.Normal = ImageBrush;
+	ButtonStyle.Hovered = ImageBrush;
+	ButtonStyle.Pressed = ImageBrush;
+	
+	ClassButton->SetStyle(ButtonStyle);
 }
