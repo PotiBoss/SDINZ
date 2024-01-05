@@ -40,7 +40,7 @@ public:
 	UPROPERTY()
 	TArray<ATowerController*> TowerControllers;
 
-	UPROPERTY(EditAnywhere, Category = "Spline")
+	UPROPERTY(EditAnywhere, Category = "Stats")
 	float Speed;
 	UPROPERTY()
 	float CurrentDistance;
@@ -48,7 +48,7 @@ public:
 	UPROPERTY()
 	float Health;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category = "Stats")
 	float MaxHealth;
 
 	UPROPERTY(EditAnywhere)

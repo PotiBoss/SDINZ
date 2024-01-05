@@ -14,10 +14,8 @@
 
 AEnemyBase::AEnemyBase()
 {
-	Speed = 75.0f; 
-	CurrentDistance = 0.0f;
-	Health = 100.0f;
-	MaxHealth = 100.0f;
+	
+	
 	
 	HealthBarComp = CreateDefaultSubobject<UWidgetComponent>("HealthBarComp");
 	HealthBarComp->SetupAttachment(RootComponent);
@@ -27,6 +25,10 @@ void AEnemyBase::BeginPlay()
 {
 	Super::BeginPlay();
 	HealthBarWidget = Cast<UHealthBarWidget>(HealthBarComp->GetWidget());
+	
+	Health = MaxHealth;
+	CurrentDistance = 0.0f;
+	
 	if(HealthBarWidget)
 	{
 		HealthBarWidget->SetHealthBar(1.0f);
