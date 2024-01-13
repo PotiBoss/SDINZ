@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SpawnerManager.h"
 #include "GameFramework/Pawn.h"
 #include "MainPlayer.generated.h"
 
@@ -38,9 +39,8 @@ public:
 	UPROPERTY()
 	bool bWhichWay;
 	
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void SetCameraUI();
-	
 	UFUNCTION(BlueprintCallable)
 	void SetCameraGameplay();
 
@@ -57,5 +57,6 @@ protected:
 	UPROPERTY()
 	AMainPlayerController* PC;
 	
-	
+	UPROPERTY()
+	ASpawnerManager* SpawnerManager;
 };

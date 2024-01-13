@@ -9,6 +9,7 @@
 
 class UHorizontalBox;
 class UProgressBar;
+class UTextBlock;
 /**
  * 
  */
@@ -22,4 +23,10 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UProgressBar* EnergyBar;
+	
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UTextBlock* EnemiesText;
+	
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UTextBlock* HealthText;
 };

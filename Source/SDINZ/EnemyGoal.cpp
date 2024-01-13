@@ -4,7 +4,11 @@
 #include "EnemyGoal.h"
 
 #include "EnemyBase.h"
+#include "MainPlayerController.h"
 #include "Components/BoxComponent.h"
+#include "Components/TextBlock.h"
+#include "Kismet/GameplayStatics.h"
+#include "UI/MainGameUI.h"
 
 // Sets default values
 AEnemyGoal::AEnemyGoal()
@@ -21,6 +25,8 @@ AEnemyGoal::AEnemyGoal()
 void AEnemyGoal::BeginPlay()
 {
 	Super::BeginPlay();
+
+	PC = Cast<AMainPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
 }
 
 void AEnemyGoal::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
@@ -32,7 +38,9 @@ void AEnemyGoal::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Oth
 
 		Enemy->Die();
 
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("EnemyGoal cpp enemy reached end"));
+		PC->BaseHealth--;
+		PC->MainUI->HealthText->SetText(FText::AsNumber(PC->BaseHealth));
+		PC->MainUI->HealthText->SetText(FText::AsNumber(PC->BaseHealth));
 	}
 }
 

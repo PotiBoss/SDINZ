@@ -8,6 +8,7 @@
 #include "UI/TowerWidget.h"
 #include "MainPlayerController.generated.h"
 
+class ASpawnerManager;
 class AGrid;
 class UMainGameUI;
 class UTowerData;
@@ -41,9 +42,15 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float EnergyGain = 1.f;
-	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int Health = 10;
+
+	UPROPERTY(BlueprintReadWrite)
+	UMainGameUI* MainUI;
+
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly)
+	int BaseHealth = 5;
+
+	UPROPERTY(BlueprintReadWrite)
+	int EnemiesNum = 1;
 	
 protected:
 	virtual void PlayerTick(float DeltaTime) override;
@@ -71,7 +78,10 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<UUserWidget> TowerWidgetClass;
+	
+	UFUNCTION(BlueprintCallable)
+	void OnLevelStart();
 
-	UPROPERTY(BlueprintReadWrite)
-	UMainGameUI* MainUI;
+	UPROPERTY()
+	ASpawnerManager* SpawnerManager;
 };

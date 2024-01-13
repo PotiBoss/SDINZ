@@ -14,6 +14,7 @@
 #include "Components/HorizontalBox.h"
 #include "Components/Image.h"
 #include "Components/ProgressBar.h"
+#include "Components/TextBlock.h"
 #include "UI/MainGameUI.h"
 #include "UI/TowerWidget.h"
 
@@ -96,6 +97,7 @@ void AMainPlayerController::BeginPlay()
 
 			TowerWidgets.Add(TowerWidget);
 		}
+		OnLevelStart();
 	}
 }
 
@@ -158,4 +160,22 @@ void AMainPlayerController::OnMousePress()
 
 void AMainPlayerController::OnMouseRelease()
 {
+}
+
+void AMainPlayerController::OnLevelStart()
+{
+	SpawnerManager = Cast<ASpawnerManager>(UGameplayStatics::GetActorOfClass(GetWorld(), ASpawnerManager::StaticClass()));
+
+	if(SpawnerManager)
+	{
+		EnemiesNum = 0;
+		for (auto Wave : SpawnerManager->EnemiesConfig)
+		{
+			EnemiesNum += Wave.Spawners.Num();
+		}
+		BaseHealth = SpawnerManager->BaseHealth;
+
+		MainUI->HealthText->SetText(FText::AsNumber(BaseHealth));
+		MainUI->EnemiesText->SetText(FText::AsNumber(EnemiesNum));
+	}
 }

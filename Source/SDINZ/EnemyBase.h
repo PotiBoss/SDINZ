@@ -6,6 +6,7 @@
 #include "PaperCharacter.h"
 #include "EnemyBase.generated.h"
 
+class AMainPlayerController;
 class ATowerController;
 class ASplineMeshActor;
 class ARoute;
@@ -56,4 +57,7 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 	class UHealthBarWidget* HealthBarWidget;
+
+	UPROPERTY()
+	AMainPlayerController* PC;
 };

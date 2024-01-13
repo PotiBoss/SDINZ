@@ -20,11 +20,8 @@ struct FEnemyWave
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int RouteIndex;
 	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int NumberOfEnemies;
-		
 //	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-//	int DelayBetweenEnemies;
+//	int NumberOfEnemies;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int DelayBetweenNextWave;
@@ -50,8 +47,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* MeshComponent;
 
+	UFUNCTION()
 	void SpawnNextWave();
-	
+
+	UPROPERTY(EditAnywhere)
+	int BaseHealth;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

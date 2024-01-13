@@ -4,19 +4,20 @@
 #include "EnemyBase.h"
 
 #include "HealthBarWidget.h"
+#include "MainPlayerController.h"
 #include "Route.h"
 #include "TowerController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/SplineComponent.h"
+#include "Components/TextBlock.h"
 #include "Components/WidgetComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "UI/MainGameUI.h"
 
 
 AEnemyBase::AEnemyBase()
 {
-	
-	
-	
 	HealthBarComp = CreateDefaultSubobject<UWidgetComponent>("HealthBarComp");
 	HealthBarComp->SetupAttachment(RootComponent);
 }
@@ -28,6 +29,8 @@ void AEnemyBase::BeginPlay()
 	
 	Health = MaxHealth;
 	CurrentDistance = 0.0f;
+
+	PC = Cast<AMainPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
 	
 	if(HealthBarWidget)
 	{
@@ -80,5 +83,8 @@ void AEnemyBase::Die()
 			TowerController->EnemiesInRange.Remove(this);
 		}
 	}
+	
+	PC->MainUI->EnemiesText->SetText(FText::AsNumber(--PC->EnemiesNum));
+	
 	Destroy();
 }
