@@ -25,6 +25,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	AGrid* GetGrid() { return Grid; }
 
+	void CheckLoseCondition();
+
 	UPROPERTY()
 	FVector CurrentTileLocation;
 
@@ -78,6 +80,12 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<UUserWidget> TowerWidgetClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UUserWidget> GameOverWidgetClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UUserWidget> GameWonWidgetClass;
 	
 	UFUNCTION(BlueprintCallable)
 	void OnLevelStart();

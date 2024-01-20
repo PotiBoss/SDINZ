@@ -37,6 +37,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TEnumAsByte<ETowerType> TileType = None;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UStaticMeshComponent* Plane;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

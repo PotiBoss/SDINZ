@@ -86,5 +86,7 @@ void AEnemyBase::Die()
 	
 	PC->MainUI->EnemiesText->SetText(FText::AsNumber(--PC->EnemiesNum));
 	
+	PC->CheckLoseCondition();
+	
 	Destroy();
 }

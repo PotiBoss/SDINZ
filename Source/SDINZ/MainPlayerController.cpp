@@ -18,6 +18,7 @@
 #include "UI/MainGameUI.h"
 #include "UI/TowerWidget.h"
 
+
 void AMainPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);
@@ -25,18 +26,23 @@ void AMainPlayerController::PlayerTick(float DeltaTime)
 	Energy += EnergyGain * DeltaTime;
 	MainUI->EnergyBar->SetPercent(Energy - FMath::FloorToInt(Energy));
 
-	for(auto TowerWidget : TowerWidgets)
+
+	if(!TowerWidgets.IsEmpty())
 	{
-		if(TowerWidget->TowerPropertiesWidget->TowerProperties.Cost > Energy)
+		for(auto TowerWidget : TowerWidgets)
 		{
-			TowerWidget->CanvasPanel->SetRenderOpacity(0.3f);
-		}
-		else
-		{
-			TowerWidget->CanvasPanel->SetRenderOpacity(1.f);
+			if(!TowerWidget->TowerPropertiesWidget) {continue;}
+			if(TowerWidget->TowerPropertiesWidget->TowerProperties.Cost > Energy)
+			{
+				TowerWidget->CanvasPanel->SetRenderOpacity(0.3f);
+			}
+			else
+			{
+				TowerWidget->CanvasPanel->SetRenderOpacity(1.f);
+			}
 		}
 	}
-
+	
 	if(Grid)
 	{
 		if(Grid->bIsHoveringUI)
@@ -177,5 +183,20 @@ void AMainPlayerController::OnLevelStart()
 
 		MainUI->HealthText->SetText(FText::AsNumber(BaseHealth));
 		MainUI->EnemiesText->SetText(FText::AsNumber(EnemiesNum));
+	}
+}
+
+void AMainPlayerController::CheckLoseCondition()
+{
+	if(BaseHealth <= 0)
+	{
+		CreateWidget(this, GameOverWidgetClass)->AddToViewport();
+		UGameplayStatics::SetGamePaused(GetWorld(), true);
+	}
+
+	if(EnemiesNum <= 0)
+	{
+		CreateWidget(this, GameWonWidgetClass)->AddToViewport();
+		UGameplayStatics::SetGamePaused(GetWorld(), true);
 	}
 }
