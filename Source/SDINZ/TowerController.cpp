@@ -5,11 +5,13 @@
 
 #include "EnemyBase.h"
 #include "TowerBase.h"
+#include "TowerData.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BehaviorTreeComponent.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Perception/AIPerceptionComponent.h"
 #include "Perception/AISenseConfig.h"
+#include "Perception/AISenseConfig_Sight.h"
 
 ATowerController::ATowerController()
 {

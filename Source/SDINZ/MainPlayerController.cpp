@@ -9,12 +9,14 @@
 #include "MainPlayer.h"
 #include "MyGameInstance.h"
 #include "TowerBase.h"
+#include "TowerController.h"
 #include "TowerData.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/HorizontalBox.h"
 #include "Components/Image.h"
 #include "Components/ProgressBar.h"
 #include "Components/TextBlock.h"
+#include "Perception/AISense_Sight.h"
 #include "UI/MainGameUI.h"
 #include "UI/TowerDetailsWidget.h"
 #include "UI/TowerWidget.h"
@@ -113,6 +115,7 @@ void AMainPlayerController::OnMousePress()
 	if(MainPlayer->DetailsWidget)
 	{
 		MainPlayer->SetCameraGameplay();
+		FlushPersistentDebugLines(GetWorld());
 	}
 	
 	FHitResult HitResult;
@@ -140,6 +143,12 @@ void AMainPlayerController::OnMousePress()
 			{
 				SelectedTower = Tile->GetTower()->TowerProperties;
 				MainPlayer->SetCameraUI();
+				
+				FColor Color = FColor::Orange;
+				DrawDebugCircle(GetWorld(), Tile->GetTower()->GetActorLocation(),
+					Tile->GetTower()->TowerProperties->TowerProperties.Range, 120, Color,
+					true, -1.f, 0, 5.0f, FVector(0.f, 1.f, 0.f),
+					FVector(1.f, 0.f, 0.f), false);
 				return;
 			}
 			
@@ -179,6 +188,8 @@ void AMainPlayerController::OnMousePress()
 			CurrentTower = nullptr;
 			Tile->SetTower(SpawnedTower);
 			Energy -= SpawnedTower->TowerProperties->TowerProperties.Cost;
+
+			
 		}
 	}
 }
