@@ -7,7 +7,6 @@
 #include "MainPlayerController.h"
 #include "Route.h"
 #include "TowerController.h"
-#include "BehaviorTree/BlackboardComponent.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/SplineComponent.h"
 #include "Components/TextBlock.h"
@@ -76,6 +75,9 @@ void AEnemyBase::MoveAcrossSpline(float DeltaSeconds)
 
 void AEnemyBase::Die()
 {
+	if (bIsDead) { return; }
+	bIsDead = true;
+	
 	for (auto TowerController : TowerControllers)
 	{
 		if(TowerController)

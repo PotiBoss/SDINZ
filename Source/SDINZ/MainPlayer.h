@@ -44,15 +44,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetCameraGameplay();
 
+	UPROPERTY(BlueprintReadWrite)
+	UTowerDetailsWidget* DetailsWidget;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UUserWidget> DetailsWidgetClass;
-
-	UPROPERTY(BlueprintReadWrite)
-	UTowerDetailsWidget* DetailsWidget;
 
 	UPROPERTY()
 	AMainPlayerController* PC;

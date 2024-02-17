@@ -29,6 +29,20 @@ void UTowerWidget::CreateTower()
 	ATowerBase* SpawnedTower = GetWorld()->SpawnActor<ATowerBase>(TowerPropertiesWidget->TowerProperties.TowerClass, FVector(0, 0, 0),
 		FRotator(0,0,0), SpawnParameters);
 	PC->PreviewTower = SpawnedTower;
+
+	TArray<AActor*> Tiles;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ATileBase::StaticClass(),Tiles);
+	
+	for (auto TileActor : Tiles)
+	{
+		ATileBase* Tile = Cast<ATileBase>(TileActor);
+		Tile->HighlightComponent->SetVisibility(true);
+
+		Tile->TileType == ETowerType::Both || Tile->TileType == PC->CurrentTower->TowerProperties.TowerType && !Tile->GetTower()
+		? Tile->HighlightComponent->SetMaterial(0, Tile->MaterialInterfaceGreen)
+		: Tile->HighlightComponent->SetVisibility(false);
+	}
+	
 }
 
 void UTowerWidget::SetVars(UTowerData* Tower)

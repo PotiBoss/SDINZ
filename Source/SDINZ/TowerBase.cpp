@@ -3,8 +3,6 @@
 
 #include "TowerBase.h"
 
-#include "GameFramework/PawnMovementComponent.h"
-
 // Sets default values
 ATowerBase::ATowerBase()
 {

@@ -38,7 +38,13 @@ public:
 	TEnumAsByte<ETowerType> TileType = None;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	UStaticMeshComponent* Plane;
+	UStaticMeshComponent* HighlightComponent;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UMaterialInterface* MaterialInterfaceGreen;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UMaterialInterface* MaterialInterfaceRed;
 
 protected:
 	// Called when the game starts or when spawned
@@ -46,7 +52,7 @@ protected:
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UStaticMeshComponent* MeshComponent;
-
+	
 	UPROPERTY(VisibleInstanceOnly, Category = "Tower")
 	ATowerBase* Tower;
 

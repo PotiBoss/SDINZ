@@ -53,6 +53,12 @@ class SDINZ_API ATowerBase : public APaperCharacter
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TSubclassOf<ATowerProjectile> ProjectileClass;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UTowerData* TowerProperties;
+	
 	// Sets default values for this pawn's properties
 	ATowerBase();
 	
@@ -61,12 +67,6 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TSubclassOf<ATowerProjectile> ProjectileClass;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	UTowerData* TowerProperties;
 
 protected:
 	// Called when the game starts or when spawned

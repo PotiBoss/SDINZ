@@ -48,15 +48,27 @@ void AMainPlayer::SetCameraUI()
 		
 		if(PC)
 		{
-			if(!PC->CurrentTower->TowerProperties.TextureUI){return;}
-			
-			DetailsWidget->TowerSplash->SetBrushFromTexture(PC->CurrentTower->TowerProperties.DetailsSplash);
-			DetailsWidget->TowerClass->SetBrushFromTexture(PC->CurrentTower->TowerProperties.TextureUI);
-			DetailsWidget->TowerNameText->SetText(PC->CurrentTower->TowerProperties.TowerName);
-			DetailsWidget->TowerHealthText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Health));
-			DetailsWidget->TowerAttackText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Damage));
-			DetailsWidget->TowerRangeText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Range));
-			DetailsWidget->TowerAttackSpeedText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.AttackSpeed));
+			if(PC->CurrentTower)
+			{
+				DetailsWidget->TowerSplash->SetBrushFromTexture(PC->CurrentTower->TowerProperties.DetailsSplash);
+				DetailsWidget->TowerClass->SetBrushFromTexture(PC->CurrentTower->TowerProperties.TextureUI);
+				DetailsWidget->TowerNameText->SetText(PC->CurrentTower->TowerProperties.TowerName);
+				DetailsWidget->TowerHealthText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Health));
+				DetailsWidget->TowerAttackText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Damage));
+				DetailsWidget->TowerRangeText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.Range));
+				DetailsWidget->TowerAttackSpeedText->SetText(FText::AsNumber(PC->CurrentTower->TowerProperties.AttackSpeed));
+			}
+			else if(PC->SelectedTower)
+			{
+				DetailsWidget->TowerSplash->SetBrushFromTexture(PC->SelectedTower->TowerProperties.DetailsSplash);
+				DetailsWidget->TowerClass->SetBrushFromTexture(PC->SelectedTower->TowerProperties.TextureUI);
+				DetailsWidget->TowerNameText->SetText(PC->SelectedTower->TowerProperties.TowerName);
+				DetailsWidget->TowerHealthText->SetText(FText::AsNumber(PC->SelectedTower->TowerProperties.Health));
+				DetailsWidget->TowerAttackText->SetText(FText::AsNumber(PC->SelectedTower->TowerProperties.Damage));
+				DetailsWidget->TowerRangeText->SetText(FText::AsNumber(PC->SelectedTower->TowerProperties.Range));
+				DetailsWidget->TowerAttackSpeedText->SetText(FText::AsNumber(PC->SelectedTower->TowerProperties.AttackSpeed));
+			}
+
 		}
 	}
 }

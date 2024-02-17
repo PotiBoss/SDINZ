@@ -16,6 +16,7 @@
 #include "Components/ProgressBar.h"
 #include "Components/TextBlock.h"
 #include "UI/MainGameUI.h"
+#include "UI/TowerDetailsWidget.h"
 #include "UI/TowerWidget.h"
 
 
@@ -109,6 +110,11 @@ void AMainPlayerController::BeginPlay()
 
 void AMainPlayerController::OnMousePress()
 {
+	if(MainPlayer->DetailsWidget)
+	{
+		MainPlayer->SetCameraGameplay();
+	}
+	
 	FHitResult HitResult;
 	GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
 
@@ -130,7 +136,13 @@ void AMainPlayerController::OnMousePress()
 		
 		if(bIsValid)
 		{
-			if(Tile->GetTower()) { return; }
+			if(Tile->GetTower())
+			{
+				SelectedTower = Tile->GetTower()->TowerProperties;
+				MainPlayer->SetCameraUI();
+				return;
+			}
+			
 			if(!CurrentTower) { return; }
 			
 			bool bIsValid2;
@@ -151,11 +163,18 @@ void AMainPlayerController::OnMousePress()
 			{
 				PreviewTower->Destroy();
 				PreviewTower = nullptr;
+
+				TArray<AActor*> Tiles;
+				UGameplayStatics::GetAllActorsOfClass(GetWorld(), ATileBase::StaticClass(),Tiles);
+	
+				for (auto TileActor : Tiles)
+				{
+					ATileBase* TileBase = Cast<ATileBase>(TileActor);
+					TileBase->HighlightComponent->SetVisibility(false);
+				}
 			}
 
 			MainPlayer->SetCameraGameplay();
-
-
 			
 			CurrentTower = nullptr;
 			Tile->SetTower(SpawnedTower);

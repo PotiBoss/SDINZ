@@ -69,6 +69,7 @@ void AGrid::SpawnNewGrid()
 	ProceduralSelectionMeshComponent->SetVisibility(false);
 }
 
+
 void AGrid::LocationToTile(FVector Location, bool& bIsValid, int& Row, int& Column)
 {
 	Row = FMath::Floor((Location.X - GetActorLocation().X) / GetGridHeight() * NumRows);

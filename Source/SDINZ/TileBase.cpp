@@ -11,6 +11,8 @@ ATileBase::ATileBase()
 	
 	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("MeshComponent");
 	SetRootComponent(MeshComponent);
+	HighlightComponent = CreateDefaultSubobject<UStaticMeshComponent>("HighlightComponent");
+	HighlightComponent->SetupAttachment(MeshComponent);
 }
 
 // Called when the game starts or when spawned

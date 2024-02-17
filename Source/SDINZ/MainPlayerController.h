@@ -30,8 +30,13 @@ public:
 	UPROPERTY()
 	FVector CurrentTileLocation;
 
+	// Not spawned
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UTowerData* CurrentTower;
+
+	// Spawned in world
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UTowerData* SelectedTower;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ATowerBase* PreviewTower;

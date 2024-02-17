@@ -19,9 +19,6 @@ struct FEnemyWave
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int RouteIndex;
-	
-//	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-//	int NumberOfEnemies;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int DelayBetweenNextWave;

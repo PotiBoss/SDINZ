@@ -60,4 +60,7 @@ public:
 
 	UPROPERTY()
 	AMainPlayerController* PC;
+
+	UPROPERTY()
+	bool bIsDead = false;
 };
